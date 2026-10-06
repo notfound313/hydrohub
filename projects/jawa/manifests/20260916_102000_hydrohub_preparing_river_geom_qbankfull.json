@@ -1,0 +1,73 @@
+{
+  "tool_id": "hydrohub.preparing.river_geom_qbankfull",
+  "tool_name": "Build River Geometry with QBankfull",
+  "category": "preparing",
+  "module": "hydrohub.tools.river_geom_qbankfull",
+  "tool_version": "1.0.0",
+  "command": [
+    "D:\\hydrohub\\.venv\\Scripts\\python.exe",
+    "-u",
+    "-m",
+    "hydrohub.tools.river_geom_qbankfull",
+    "--staticmaps",
+    "D:\\hydrohub\\projects\\jawa\\models\\wflow\\staticmaps.nc",
+    "--merit-width",
+    "D:\\hydrohub\\HydroHub_Global_Database\\dem\\MERIT_RiverWidth_Jawa.tif",
+    "--qbankfull-gpkg",
+    "D:\\hydrohub\\HydroHub_Global_Database\\qbankfull\\GQBFv0.1_reaches_SP_EPSG4326.gpkg",
+    "--output-gpkg",
+    "D:\\hydrohub\\projects\\jawa\\data\\preparing_data\\hydrography\\river_geom_jawa_qbankfull.gpkg",
+    "--river-upa-threshold-km2",
+    "50.0",
+    "--max-fill-cells",
+    "4",
+    "--min-rivwth",
+    "1.0",
+    "--min-rivdph",
+    "1.0"
+  ],
+  "parameters": [
+    "--staticmaps",
+    "D:\\hydrohub\\projects\\jawa\\models\\wflow\\staticmaps.nc",
+    "--merit-width",
+    "D:\\hydrohub\\HydroHub_Global_Database\\dem\\MERIT_RiverWidth_Jawa.tif",
+    "--qbankfull-gpkg",
+    "D:\\hydrohub\\HydroHub_Global_Database\\qbankfull\\GQBFv0.1_reaches_SP_EPSG4326.gpkg",
+    "--output-gpkg",
+    "D:\\hydrohub\\projects\\jawa\\data\\preparing_data\\hydrography\\river_geom_jawa_qbankfull.gpkg",
+    "--river-upa-threshold-km2",
+    "50.0",
+    "--max-fill-cells",
+    "4",
+    "--min-rivwth",
+    "1.0",
+    "--min-rivdph",
+    "1.0"
+  ],
+  "working_directory": "D:\\hydrohub\\projects\\jawa",
+  "started_at": "2026-09-16T03:19:51.667184+00:00",
+  "completed_at": "2026-09-16T03:20:00.658934+00:00",
+  "duration_seconds": 8.992,
+  "exit_code": 0,
+  "status": "WARNING",
+  "summary": [
+    "raw_width = source.read(1).astype(np.float32)",
+    "{",
+    "\"segments\": 1315,",
+    "\"qbankfull_valid\": 1315,",
+    "\"qbankfull_missing\": 0,",
+    "\"filled_width_cells\": 4958,",
+    "\"output\": \"D:\\\\hydrohub\\\\projects\\\\jawa\\\\data\\\\preparing_data\\\\hydrography\\\\river_geom_jawa_qbankfull.gpkg\"",
+    "}"
+  ],
+  "outputs": [],
+  "warnings": [
+    "D:\\hydrohub\\src\\hydrohub\\tools\\river_geom_qbankfull.py:145: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5."
+  ],
+  "errors": [],
+  "log_file": "D:\\hydrohub\\projects\\jawa\\manifests\\20260916_101951_hydrohub_preparing_river_geom_qbankfull.log",
+  "environment_profile": {
+    "python": "D:\\hydrohub\\.venv\\Scripts\\python.exe"
+  },
+  "platform": "nt"
+}

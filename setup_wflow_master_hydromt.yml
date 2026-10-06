@@ -1,0 +1,446 @@
+# =============================================================================
+# HydroMT-Wflow SBM MASTER SETUP TEMPLATE
+# Target: HydroMT-Wflow 1.x / WflowSbmModel
+#
+# IMPORTANT
+# - HydroMT executes "steps" from top to bottom.
+# - Do NOT enable every method at once.
+# - Alternative methods should be selected according to the available data.
+# - Replace all PLACEHOLDER_* data source names with entries from your data catalog.
+# - setup_basemaps must precede setup_rivers.
+#
+# Intended use:
+#   hydromt build wflow_sbm <MODEL_OUT> -i setup_wflow.yml -d data_catalog.yml -vvv
+#
+# HydroHub can use this file as a master library/template and only uncomment
+# the setup methods selected by the user.
+# =============================================================================
+
+steps:
+
+  # ===========================================================================
+  # 01. WFLOW TOML CONFIGURATION
+  # ===========================================================================
+  - setup_config:
+      data:
+        time.starttime: "2001-01-01T00:00:00"
+        time.endtime: "2001-12-31T00:00:00"
+        time.timestepsecs: 86400
+        model.snow__flag: false
+        model.snow_gravitational_transport__flag: false
+
+        # Forcing path written/used by Wflow.jl
+        input.path_forcing: "inmaps.nc"
+
+        # Main grid output
+        output.netcdf_grid.path: "output.nc"
+        output.netcdf_grid.compressionlevel: 1
+
+        # Example output variable
+        output.netcdf_grid.variables.river_water__volume_flow_rate: "river_q"
+
+
+  # ===========================================================================
+  # 02. BASEMAPS / MODEL DOMAIN
+  # REQUIRED FIRST SPATIAL STEP
+  # ===========================================================================
+  - setup_basemaps:
+      hydrography_fn: "PLACEHOLDER_HYDROGRAPHY"
+      basin_index_fn: null
+      res: 0.008333333333333333
+      upscale_method: "ihu"
+
+      # Select ONE region definition.
+      region:
+        # Recommended:
+        # basin: [110.0, -7.0]
+        # OR:
+        # subbasin: [110.0, -7.0]
+        # uparea: 50
+        # bounds: [105.0, -9.0, 115.0, -5.0]
+
+        # Generic bbox example:
+        bbox: [105.0, -9.0, 115.0, -5.0]
+
+
+  # ===========================================================================
+  # 03. RIVER NETWORK + GEOMETRY
+  # Must follow setup_basemaps
+  # ===========================================================================
+  - setup_rivers:
+      hydrography_fn: "PLACEHOLDER_HYDROGRAPHY"
+      river_geom_fn: "PLACEHOLDER_RIVER_GEOMETRY"
+      river_upa: 50
+      rivdph_method: "powlaw"
+      slope_len: 2000
+      min_rivlen_ratio: 0.0
+      min_rivdph: 1.0
+      min_rivwth: 1.0
+      smooth_len: 5000
+      elevtn_map: "land_elevation"
+      river_routing: "kinematic_wave"
+      connectivity: 8
+
+      # Supported in recent HydroMT-Wflow versions.
+      # If your installed version rejects this keyword, remove this block
+      # and inspect your installed setup_rivers signature.
+      river_depth_kwargs:
+        hc: 0.27
+        hp: 0.30
+
+
+  # ===========================================================================
+  # 04. RIVER ROUGHNESS
+  # ===========================================================================
+  - setup_river_roughness:
+      # null -> use HydroMT-Wflow default mapping
+      rivman_mapping_fn: null
+      strord_name: "meta_streamorder"
+      output_name: "river_manning_n"
+
+
+  # ===========================================================================
+  # 05. FLOODPLAINS - OPTIONAL
+  # Requires setup_rivers and local-inertial routing.
+  # Enable ONE floodplain representation if needed.
+  # ===========================================================================
+
+  # - setup_floodplains:
+  #     hydrography_fn: "PLACEHOLDER_HYDROGRAPHY"
+  #     floodplain_type: "1d"
+  #     river_upa: 50
+  #     flood_depths: [0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 4.0, 5.0]
+
+  # - setup_floodplains:
+  #     hydrography_fn: "PLACEHOLDER_HYDROGRAPHY"
+  #     floodplain_type: "2d"
+  #     elevtn_map: "land_elevation"
+  #     connectivity: 4
+
+
+  # ===========================================================================
+  # 06. RESERVOIRS / LAKES - OPTIONAL
+  # ===========================================================================
+
+  # Controlled reservoirs
+  # - setup_reservoirs_simple_control:
+  #     reservoirs_fn: "PLACEHOLDER_CONTROLLED_RESERVOIRS"
+  #     # Add optional parameters only if supported by your installed version.
+
+  # Uncontrolled reservoirs / lakes / weirs
+  # - setup_reservoirs_no_control:
+  #     reservoirs_fn: "PLACEHOLDER_UNCONTROLLED_RESERVOIRS"
+  #     min_area: 1.0
+
+
+  # ===========================================================================
+  # 07. GLACIERS - OPTIONAL
+  # ===========================================================================
+  # - setup_glaciers:
+  #     glaciers_fn: "PLACEHOLDER_GLACIERS"
+  #     min_area: 0.0
+
+
+  # ===========================================================================
+  # 08. LAND USE / LAND COVER
+  # Choose the setup that matches your source.
+  # ===========================================================================
+
+  - setup_lulcmaps:
+      lulc_fn: "PLACEHOLDER_LULC"
+      lulc_mapping_fn: "PLACEHOLDER_LULC_MAPPING"
+      # Optional:
+      # lulc_vars:
+      #   - landuse
+      #   - vegetation_kext
+      #   - land_manning_n
+      #   - soil_compacted_fraction
+      #   - vegetation_root_depth
+      #   - vegetation_leaf_storage
+      #   - vegetation_wood_storage
+      #   - land_water_fraction
+      #   - vegetation_crop_factor
+      #   - vegetation_feddes_alpha_h1
+      #   - vegetation_feddes_h1
+      #   - vegetation_feddes_h2
+      #   - vegetation_feddes_h3_high
+      #   - vegetation_feddes_h3_low
+      #   - vegetation_feddes_h4
+      # output_names_suffix: null
+
+  # Alternative: vector LULC
+  # - setup_lulcmaps_from_vector:
+  #     lulc_fn: "PLACEHOLDER_LULC_VECTOR"
+  #     lulc_mapping_fn: "PLACEHOLDER_LULC_MAPPING"
+
+  # Alternative: LULC with paddy.
+  # IMPORTANT: this setup has additional soil/paddy dependencies.
+  # - setup_lulcmaps_with_paddy:
+  #     lulc_fn: "PLACEHOLDER_LULC"
+  #     lulc_mapping_fn: "PLACEHOLDER_LULC_MAPPING"
+  #     paddy_fn: "PLACEHOLDER_PADDY"
+
+
+  # ===========================================================================
+  # 09. LEAF AREA INDEX
+  # Choose ONE primary LAI method.
+  # ===========================================================================
+
+  - setup_laimaps:
+      lai_fn: "PLACEHOLDER_LAI"
+      # Optional:
+      # lulc_fn: "PLACEHOLDER_LULC"
+      # lulc_sampling_method: "any"
+      # lulc_zero_classes: []
+      # buffer: 2
+      # output_name: "vegetation_leaf_area_index"
+
+  # Alternative: derive monthly LAI from LULC mapping
+  # - setup_laimaps_from_lulc_mapping:
+  #     lulc_fn: "PLACEHOLDER_LULC"
+  #     lulc_mapping_fn: "PLACEHOLDER_LULC_LAI_MAPPING"
+
+
+  # ===========================================================================
+  # 10. SOIL
+  # ===========================================================================
+  - setup_soilmaps:
+      soil_fn: "PLACEHOLDER_SOIL"
+      ptf_ksatver: "brakensiek"
+      wflow_thicknesslayers: [100, 300, 800]
+
+  # Optional: horizontal/vertical conductivity ratio from map
+  # - setup_ksathorfrac:
+  #     ksat_fn: "PLACEHOLDER_KSATHORFRAC"
+  #     variable: "PLACEHOLDER_VARIABLE"
+
+  # Optional: vegetation correction for KsatVer
+  # Requires setup_soilmaps + LAI or equivalent.
+  # - setup_ksatver_vegetation:
+  #     soil_fn: "PLACEHOLDER_SOIL"
+  #     alfa: 4.5
+  #     beta: 5.0
+
+
+  # ===========================================================================
+  # 11. ROOT-ZONE CLIMATOLOGY - OPTIONAL
+  # Requires soil + LAI.
+  # ===========================================================================
+  # - setup_rootzoneclim:
+  #     run_fn: "PLACEHOLDER_STREAMFLOW"
+  #     forcing_obs_fn: "PLACEHOLDER_OBS_PRECIP_PET"
+  #     # forcing_cc_hist_fn: "PLACEHOLDER_CLIMATE_HIST"
+  #     # forcing_cc_fut_fn: "PLACEHOLDER_CLIMATE_FUT"
+  #     chunksize: 100
+
+
+  # ===========================================================================
+  # 12. NATURE-BASED SOLUTIONS - OPTIONAL
+  # ===========================================================================
+  # - setup_agroforestry:
+  #     agroforestry_fn: "PLACEHOLDER_AGROFORESTRY"
+
+  # Ponding methods are documented around HydroMT-Wflow 1.1, but documentation
+  # is currently inconsistent about runtime availability / Wflow.jl support.
+  # Keep disabled unless `hasattr(WflowSbmModel, "...")` confirms availability.
+
+  # - setup_ponding_from_map:
+  #     pond_fn: "PLACEHOLDER_POND_LOCATIONS"
+  #     pond_level: 0.1
+  #     output_name: "ponding_level"
+
+  # - setup_ponding_from_thresholds:
+  #     lulc_fn: "PLACEHOLDER_LULC"
+  #     hydrography_fn: "PLACEHOLDER_HYDROGRAPHY"
+  #     lulc_classes: [1]
+  #     elevtn_range: [0, 2000]
+  #     slope_range: [0.129, 0.3]
+  #     hand_range: [5.9, 20]
+  #     pond_level: 0.02
+  #     output_name: "ponding_level"
+
+
+  # ===========================================================================
+  # 13. WATER ALLOCATION / DEMANDS - OPTIONAL
+  # ===========================================================================
+
+  # - setup_allocation_areas:
+  #     waterareas_fn: "PLACEHOLDER_WATER_ALLOCATION_AREAS"
+
+  # - setup_allocation_surfacewaterfrac:
+  #     gwfrac_fn: "PLACEHOLDER_GROUNDWATER_FRACTION"
+
+  # Domestic demand from gridded demand
+  # - setup_domestic_demand:
+  #     domestic_fn: "PLACEHOLDER_DOMESTIC_DEMAND"
+
+  # Domestic demand from population + per-capita statistics
+  # - setup_domestic_demand_from_population:
+  #     population_fn: "PLACEHOLDER_POPULATION"
+  #     domestic_fn: "PLACEHOLDER_DOMESTIC_STATISTICS"
+
+  # Other water demands, e.g. industry / livestock
+  # - setup_other_demand:
+  #     demand_fn: "PLACEHOLDER_OTHER_DEMAND"
+
+  # Irrigation from raster
+  # - setup_irrigation:
+  #     irrigated_area_fn: "PLACEHOLDER_IRRIGATION_RASTER"
+  #     irrigation_value: 1
+
+  # Irrigation from vector
+  # - setup_irrigation_from_vector:
+  #     irrigation_fn: "PLACEHOLDER_IRRIGATION_VECTOR"
+
+
+  # ===========================================================================
+  # 14. PRECIPITATION FORCING
+  # Choose gridded precipitation OR point-series interpolation.
+  # ===========================================================================
+
+  - setup_precip_forcing:
+      precip_fn: "PLACEHOLDER_PRECIP"
+      # Optional high-resolution climatology correction:
+      # precip_clim_fn: "PLACEHOLDER_PRECIP_CLIM"
+      chunksize: 336
+
+  # Alternative: station/point precipitation
+  # - setup_precip_from_point_timeseries:
+  #     precip_fn: "PLACEHOLDER_PRECIP_TIMESERIES"
+  #     interp_type: "nearest"
+  #     precip_stations_fn: "PLACEHOLDER_PRECIP_STATIONS"
+  #     index_col: null
+  #     buffer: 100000
+
+
+  # ===========================================================================
+  # 15. TEMPERATURE / PET FORCING
+  # Choose A or B.
+  # ===========================================================================
+
+  # A. Existing PET dataset
+  - setup_pet_forcing:
+      pet_fn: "PLACEHOLDER_PET"
+      chunksize: 168
+
+  # B. Derive temperature + PET from meteorological input
+  # Disable setup_pet_forcing above when using this.
+  # - setup_temp_pet_forcing:
+  #     temp_pet_fn: "PLACEHOLDER_TEMP_PET_SOURCE"
+  #     dem_forcing_fn: "PLACEHOLDER_FORCING_DEM"
+  #     pet_method: "debruin"
+  #     press_correction: true
+  #     temp_correction: true
+  #     skip_pet: false
+  #     # fillna_method: null
+
+
+  # ===========================================================================
+  # 16. CONSTANT PARAMETERS
+  # Wflow.jl standard names should be used in HydroMT-Wflow 1.x.
+  # ===========================================================================
+  - setup_constant_pars:
+      subsurface_water__horizontal_to_vertical_saturated_hydraulic_conductivity_ratio: 100
+      snowpack__degree_day_coefficient: 3.75653
+      soil_surface_water__infiltration_reduction_parameter: 0.038
+      vegetation_canopy_water__mean_evaporation_to_mean_precipitation_ratio: 0.11
+      compacted_soil_surface_water__infiltration_capacity: 10
+      soil_water_saturated_zone_bottom__max_leakage_volume_flux: 0
+      soil_wet_root__sigmoid_function_shape_parameter: -500
+      atmosphere_air__snowfall_temperature_threshold: 0
+      atmosphere_air__snowfall_temperature_interval: 2
+      snowpack__melting_temperature_threshold: 0
+      snowpack__liquid_water_holding_capacity: 0.1
+      glacier_ice__degree_day_coefficient: 3
+      glacier_firn_accumulation__snowpack_dry_snow_leq_depth_fraction: 0.001
+      glacier_ice__melting_temperature_threshold: 0
+
+
+  # ===========================================================================
+  # 17. OUTPUT LOCATIONS
+  # ===========================================================================
+
+  - setup_outlets:
+      river_only: true
+
+  # Optional user gauges
+  # - setup_gauges:
+  #     gauges_fn: "PLACEHOLDER_GAUGES"
+  #     index_col: null
+  #     snap_to_river: true
+  #     derive_subcatch: false
+
+  # Optional subbasin delineation (HydroMT-Wflow 1.1+)
+  # Choose method/threshold supported by your installed version.
+  # - setup_subbasins:
+  #     method: "streamorder"
+  #     threshold: 4
+
+  # Optional arbitrary reporting-area map
+  # - setup_areamap:
+  #     area_fn: "PLACEHOLDER_AREA_VECTOR"
+  #     col2raster: "ID"
+  #     nodata: -1
+
+
+  # ===========================================================================
+  # 18. OUTPUT TIMESERIES CONFIGURATION
+  # Execute AFTER the corresponding map (outlets/gauges/area map) exists.
+  # ===========================================================================
+  # - setup_config_output_timeseries:
+  #     mapname: "gauges"
+  #     # Additional output options depend on the installed version.
+
+
+  # ===========================================================================
+  # 19. COLD STATES - OPTIONAL
+  # Use only after the required static parameters/components are prepared.
+  # ===========================================================================
+  # - setup_cold_states:
+  #     timestamp: null
+
+
+  # ===========================================================================
+  # 20. CUSTOM GRID DATA - OPTIONAL
+  # Generic escape hatch for user-defined model parameters.
+  # ===========================================================================
+
+  # Add static maps from raster
+  # - setup_grid_from_raster:
+  #     raster_fn: "PLACEHOLDER_CUSTOM_RASTER"
+  #     variables:
+  #       - "PLACEHOLDER_VARIABLE"
+
+  # Add static/cyclic/forcing data from GeoDataset (1.1+)
+  # - setup_grid_from_geodataset:
+  #     geodataset_fn: "PLACEHOLDER_GEODATASET"
+
+
+  # ===========================================================================
+  # 21. 1D MODEL CONNECTION - OPTIONAL
+  # Delft3D FM / HEC-RAS / other coupled river workflows
+  # ===========================================================================
+  # - setup_1dmodel_connection:
+  #     river1d_fn: "PLACEHOLDER_1D_RIVER"
+
+
+  # ===========================================================================
+  # 22. LEGACY / COMPATIBILITY
+  # ===========================================================================
+
+  # setup_riverwidth remains visible in the Python API for compatibility, but
+  # current workflows normally derive river width inside setup_rivers.
+  #
+  # - setup_riverwidth:
+  #     predictor: "discharge"
+  #     fill: true
+  #     fit: true
+
+
+# =============================================================================
+# NOT A setup_* METHOD, BUT AVAILABLE IN THE MODEL WORKFLOW
+# -----------------------------------------------------------------------------
+# clip:
+#   Used to clip an EXISTING Wflow model. Do not insert blindly in a fresh-build
+#   sequence. Prefer a dedicated HydroHub "Clip model" workflow.
+# =============================================================================

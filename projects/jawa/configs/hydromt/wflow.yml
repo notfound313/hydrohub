@@ -1,0 +1,21 @@
+steps:
+- setup_config:
+    data:
+      time.starttime: '2001-01-01T00:00:00'
+      time.endtime: '2010-12-31T00:00:00'
+      time.timestepsecs: 86400
+      model.snow__flag: false
+      model.snow_gravitational_transport__flag: false
+      input.path_forcing: inmaps.nc
+      output.netcdf_grid.path: output.nc
+      output.netcdf_grid.compressionlevel: 1
+      output.netcdf_grid.variables.river_water__volume_flow_rate: river_q
+
+ 
+- setup_precip_forcing:
+    precip_fn: gsmp
+    chunksize: 336
+
+- setup_pet_forcing:
+    pet_fn: era_5
+    chunksize: 168

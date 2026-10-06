@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "tool_id": "subbasin_delineate",
+  "parameters": {
+    "input": "D:\\hydrohub\\projects\\Sumatra\\data\\preparing_data\\manifest_data\\02_hydromt_rebuilt\\hydrography_rebuilt\\flwdir.tif",
+    "ftype": "d8",
+    "area_min": "250",
+    "output": "D:\\hydrohub\\projects\\Sumatra\\data\\preparing_data\\Subbasin",
+    "aoi_mode": "auto",
+    "west": "95.195138",
+    "south": "-5.937325",
+    "east": "109.120514",
+    "north": "5.877151",
+    "aoi_path": "D:\\hydrohub\\projects\\Sumatra\\workspace\\aoi.geojson"
+  },
+  "environment": {},
+  "secrets": []
+}

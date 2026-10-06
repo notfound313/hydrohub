@@ -1,0 +1,66 @@
+{
+  "tool_id": "hydromt.cli",
+  "tool_name": "HydroMT Update",
+  "category": "model",
+  "module": "hydromt",
+  "tool_version": "1",
+  "command": [
+    "D:\\hydrohub\\.venv\\Scripts\\hydromt.EXE",
+    "update",
+    "wflow_sbm",
+    "D:\\hydrohub\\projects\\jawa\\models\\wflow",
+    "-o",
+    "D:/hydrohub/projects/jawa/models/wflow_pet",
+    "-i",
+    "D:\\hydrohub\\projects\\jawa\\configs\\hydromt\\wflow.yml",
+    "-d",
+    "D:\\hydrohub\\projects\\jawa\\workspace\\runtime_catalogs\\update_wflow.yml",
+    "--fo",
+    "-v"
+  ],
+  "parameters": [
+    "update",
+    "wflow_sbm",
+    "D:\\hydrohub\\projects\\jawa\\models\\wflow",
+    "-o",
+    "D:/hydrohub/projects/jawa/models/wflow_pet",
+    "-i",
+    "D:\\hydrohub\\projects\\jawa\\configs\\hydromt\\wflow.yml",
+    "-d",
+    "D:\\hydrohub\\projects\\jawa\\workspace\\runtime_catalogs\\update_wflow.yml",
+    "--fo",
+    "-v"
+  ],
+  "working_directory": "D:\\hydrohub\\projects\\jawa",
+  "started_at": "2026-09-18T02:31:59.011694+00:00",
+  "completed_at": "2026-09-18T02:32:02.072896+00:00",
+  "duration_seconds": 3.061,
+  "exit_code": 1,
+  "status": "ERROR",
+  "summary": [
+    "ds = open_(p, **open_kwargs)",
+    "File \"D:\\hydrohub\\.venv\\Lib\\site-packages\\xarray\\backends\\api.py\", line 613, in open_dataset",
+    "backend_ds = backend.open_dataset(",
+    "filename_or_obj,",
+    "...<2 lines>...",
+    "**kwargs,",
+    ")",
+    "TypeError: NetCDF4BackendEntrypoint.open_dataset() got an unexpected keyword argument 'time'"
+  ],
+  "outputs": [],
+  "warnings": [
+    "2026-09-18 09:32:01,696 - hydromt.hydromt_wflow.components.states - states - WARNING - CRS not found in states data, setting to model CRS."
+  ],
+  "errors": [
+    "2026-09-18 09:32:01,733 - hydromt - log - ERROR - Unhandled exception occured.",
+    "Traceback (most recent call last):",
+    "TypeError: NetCDF4BackendEntrypoint.open_dataset() got an unexpected keyword argument 'time'",
+    "Traceback (most recent call last):",
+    "TypeError: NetCDF4BackendEntrypoint.open_dataset() got an unexpected keyword argument 'time'"
+  ],
+  "log_file": "D:\\hydrohub\\projects\\jawa\\manifests\\20260918_093159_hydromt_cli.log",
+  "environment_profile": {
+    "python": "D:\\hydrohub\\.venv\\Scripts\\hydromt.EXE"
+  },
+  "platform": "nt"
+}

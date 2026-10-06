@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "graft": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@nanonets/graft",
+        "mcp"
+      ]
+    },
+    "serena": {
+      "command": "npx",
+      "args": ["-y", "@oraios/serena-mcp", "--stdio"],
+      "env": {
+        "SERENA_PROJECT_DIR": "D:\\hydrohub"
+      }
+    }
+  }
+}

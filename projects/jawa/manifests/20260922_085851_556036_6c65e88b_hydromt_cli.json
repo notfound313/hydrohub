@@ -1,0 +1,60 @@
+{
+  "tool_id": "hydromt.cli",
+  "tool_name": "HydroMT Update",
+  "category": "model",
+  "module": "hydromt",
+  "tool_version": "1",
+  "command": [
+    "D:\\hydrohub\\.venv\\Scripts\\hydromt.EXE",
+    "update",
+    "wflow_sbm",
+    "D:\\hydrohub\\projects\\jawa\\models\\wflow",
+    "-o",
+    "D:/hydrohub/projects/jawa/models/wflow_pet",
+    "-i",
+    "D:\\hydrohub\\projects\\jawa\\configs\\hydromt\\wflow.yml",
+    "-d",
+    "D:\\hydrohub\\projects\\jawa\\workspace\\runtime_catalogs\\update_wflow.yml",
+    "--fo",
+    "-v"
+  ],
+  "parameters": [
+    "update",
+    "wflow_sbm",
+    "D:\\hydrohub\\projects\\jawa\\models\\wflow",
+    "-o",
+    "D:/hydrohub/projects/jawa/models/wflow_pet",
+    "-i",
+    "D:\\hydrohub\\projects\\jawa\\configs\\hydromt\\wflow.yml",
+    "-d",
+    "D:\\hydrohub\\projects\\jawa\\workspace\\runtime_catalogs\\update_wflow.yml",
+    "--fo",
+    "-v"
+  ],
+  "working_directory": "D:\\hydrohub\\projects\\jawa",
+  "started_at": "2026-09-22T01:58:51.556027+00:00",
+  "completed_at": "2026-09-22T01:59:02.987787+00:00",
+  "duration_seconds": 11.432,
+  "exit_code": 0,
+  "status": "WARNING",
+  "summary": [
+    "[####################################### ] | 98% Completed | 5.38 s",
+    "[####################################### ] | 98% Completed | 5.49 s",
+    "[####################################### ] | 98% Completed | 5.59 s",
+    "[####################################### ] | 98% Completed | 5.69 s",
+    "[########################################] | 100% Completed | 5.79 s",
+    "2026-09-22 08:59:02,569 - hydromt.model.components.tables - tables - INFO - wflow_sbm.tables: No tables found, skip writing.",
+    "2026-09-22 08:59:02,570 - hydromt.model.components.grid - grid - INFO - wflow_sbm.states: No grid data found, skip writing.",
+    "2026-09-22 08:59:02,570 - hydromt.hydromt_wflow.components.config - config - INFO - Writing model config to D:/hydrohub/projects/jawa/models/wflow_pet/wflow_sbm.toml."
+  ],
+  "outputs": [],
+  "warnings": [
+    "2026-09-22 08:58:54,679 - hydromt.hydromt_wflow.components.states - states - WARNING - CRS not found in states data, setting to model CRS."
+  ],
+  "errors": [],
+  "log_file": "D:\\hydrohub\\projects\\jawa\\manifests\\20260922_085851_556036_6c65e88b_hydromt_cli.log",
+  "environment_profile": {
+    "python": "D:\\hydrohub\\.venv\\Scripts\\hydromt.EXE"
+  },
+  "platform": "nt"
+}

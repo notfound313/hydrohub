@@ -1,0 +1,103 @@
+meta:
+  root: None
+
+basin_outlet:
+  uri: D:/hydrohub/projects/jawa/data/preparing_data/hydrography/subbasins.gpkg
+  driver:
+    options:
+      layer: outlets
+    name: pyogrio
+  metadata:
+    crs: 4326
+    category: reference
+  data_type: GeoDataFrame
+  root: None
+
+esa_worldcover_mapping_default:
+  uri: lulc/v1.0/esa_worldcover_mapping.csv
+  driver:
+    options:
+      index_col: 0
+      dtype:
+        landuse: int16
+        vegetation_kext: float32
+        land_manning_n: float32
+        soil_compacted_fraction: float32
+        vegetation_root_depth: float32
+        vegetation_leaf_storage: float32
+        vegetation_wood_storage: float32
+        land_water_fraction: float32
+        vegetation_crop_factor: float32
+        vegetation_feddes_alpha_h1: int16
+        vegetation_feddes_h1: int16
+        vegetation_feddes_h2: int16
+        vegetation_feddes_h3_high: int16
+        vegetation_feddes_h3_low: int16
+        vegetation_feddes_h4: int16
+        erosion_usle_c: float32
+        Cov_River: float32
+    name: pandas
+  version: '1.0'
+  metadata:
+    category: landuse
+    info: landuse parameters based on esa worldcover classification (https://doi.org/10.5281/zenodo.5571936)
+  data_type: DataFrame
+  root: None
+
+landcover:
+  uri: D:/hydrohub/HydroHub_Global_Database/landcover/esa_worldcover_2021_Indonesia.tif
+  driver:
+    options: {}
+    name: rasterio
+  metadata:
+    crs: 4326
+    category: landcover
+  data_type: RasterDataset
+  root: None
+
+merit_jawa:
+  uri: D:/hydrohub/projects/jawa/manifests_data/manifest_data/02_hydromt_rebuilt/hydrography_rebuilt/{variable}.tif
+  driver:
+    options: {}
+    name: rasterio
+  uri_resolver:
+    name: convention
+  metadata:
+    crs: 4326
+    category: hydrography
+  data_type: RasterDataset
+  root: None
+
+modis_lai:
+  uri: D:/hydrohub/projects/jawa/data/preparing_data/lai.nc
+  driver:
+    options: {}
+    name: raster_xarray
+  metadata:
+    crs: 4326
+    category: vegetation
+  data_type: RasterDataset
+  root: None
+
+river_geometry_jawa:
+  uri: D:/hydrohub/projects/jawa/data/preparing_data/hydrography/river_geom_jawa_qbankfull.gpkg
+  driver:
+    name: pyogrio
+  metadata:
+    crs: 4326
+    category: river_geometry
+  data_type: GeoDataFrame
+  root: None
+
+soilgrids_2020:
+  uri: D:/hydrohub/projects/jawa/data/preparing_data/soilgrids_2020/{variable}.tif
+  driver:
+    options: {}
+    name: rasterio
+  uri_resolver:
+    name: convention
+  metadata:
+    crs: 4326
+    category: landuse
+  data_type: RasterDataset
+  root: None

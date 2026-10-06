@@ -1,0 +1,69 @@
+meta:
+  version: v1.0.0
+  name: wflow_catalog
+  hydromt_version: '>1.0a,<2'
+
+merit_jawa:
+  data_type: RasterDataset
+  uri: D:/hydrohub/projects/jawa/data/raw/data/hydrography/{variable}.tif
+  driver:
+    name: rasterio
+  metadata:
+    crs: '4326'
+    category: hydrography
+
+river_geometry_jawa:
+  data_type: GeoDataFrame
+  uri: D:/hydrohub/projects/jawa/data/raw/data/RIVER_GEOM_QBF/river_geom_jawa_qbankfull.gpkg
+  driver:
+    name: pyogrio
+  metadata:
+    crs: '4326'
+    category: forcing
+
+soilgrids_2020:
+  data_type: RasterDataset
+  uri: D:/hydrohub/projects/jawa/data/raw/data/soilgrids_2020/{variable}.tif
+  driver:
+    name: rasterio
+  metadata:
+    crs: '4326'
+    category: reference
+
+modis_lai:
+  data_type: RasterDataset
+  uri: D:/hydrohub/projects/jawa/data/raw/data/vegetation/modis_lai_jawa.nc
+  driver:
+    name: raster_xarray
+  metadata:
+    crs: '4326'
+    category: vegetation
+
+landcover:
+  data_type: RasterDataset
+  uri: D:/hydrohub/projects/jawa/data/raw/data/landuse/esa_worldcover_2021_jawa.tif
+  driver:
+    name: rasterio
+  metadata:
+    crs: '4326'
+    category: landcover
+
+basin_outlet:
+  data_type: GeoDataFrame
+  uri: D:/hydrohub/projects/jawa/data/raw/outlet.gpkg
+  driver:
+    name: pyogrio
+    options:
+      layer: outlet
+  metadata:
+    crs: '4326'
+    category: reference
+
+basin_index:
+  data_type: GeoDataFrame
+  uri: D:/hydrohub/projects/jawa/data/raw/index_basin.gpkg
+  driver:
+    name: pyogrio
+  metadata:
+    crs: '4326'
+    category: reference

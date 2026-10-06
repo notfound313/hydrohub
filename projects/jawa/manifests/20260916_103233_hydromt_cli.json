@@ -1,0 +1,63 @@
+{
+  "tool_id": "hydromt.cli",
+  "tool_name": "HydroMT Update",
+  "category": "model",
+  "module": "hydromt",
+  "tool_version": "1",
+  "command": [
+    "D:\\hydrohub\\.venv\\Scripts\\hydromt.EXE",
+    "update",
+    "wflow_sbm",
+    "D:\\hydrohub\\projects\\jawa\\models\\wflow",
+    "-o",
+    "D:\\hydrohub\\projects\\jawa\\models\\wflow_updated",
+    "-i",
+    "D:\\hydrohub\\projects\\jawa\\configs\\hydromt\\jawa.yml",
+    "-d",
+    "D:\\hydrohub\\projects\\jawa\\workspace\\runtime_catalogs\\wflow_catalog.yml",
+    "--fo",
+    "-v"
+  ],
+  "parameters": [
+    "update",
+    "wflow_sbm",
+    "D:\\hydrohub\\projects\\jawa\\models\\wflow",
+    "-o",
+    "D:\\hydrohub\\projects\\jawa\\models\\wflow_updated",
+    "-i",
+    "D:\\hydrohub\\projects\\jawa\\configs\\hydromt\\jawa.yml",
+    "-d",
+    "D:\\hydrohub\\projects\\jawa\\workspace\\runtime_catalogs\\wflow_catalog.yml",
+    "--fo",
+    "-v"
+  ],
+  "working_directory": "D:\\hydrohub\\projects\\jawa",
+  "started_at": "2026-09-16T03:32:31.197323+00:00",
+  "completed_at": "2026-09-16T03:32:33.473983+00:00",
+  "duration_seconds": 2.277,
+  "exit_code": 1,
+  "status": "ERROR",
+  "summary": [
+    "by_name=by_name,",
+    "^^^^^^^^^^^^^^^^",
+    ")",
+    "^",
+    "pydantic_core._pydantic_core.ValidationError: 1 validation error for GeoDataFrameSource",
+    "driver",
+    "Value error, Unknown 'name': 'rasterio' [type=value_error, input_value={}, input_type=dict]",
+    "For further information visit https://errors.pydantic.dev/2.13/v/value_error"
+  ],
+  "outputs": [],
+  "warnings": [],
+  "errors": [
+    "Traceback (most recent call last):",
+    "pydantic_core._pydantic_core.ValidationError: 1 validation error for GeoDataFrameSource",
+    "Value error, Unknown 'name': 'rasterio' [type=value_error, input_value={}, input_type=dict]",
+    "For further information visit https://errors.pydantic.dev/2.13/v/value_error"
+  ],
+  "log_file": "D:\\hydrohub\\projects\\jawa\\manifests\\20260916_103231_hydromt_cli.log",
+  "environment_profile": {
+    "python": "D:\\hydrohub\\.venv\\Scripts\\hydromt.EXE"
+  },
+  "platform": "nt"
+}

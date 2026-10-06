@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "model_id": "81b65dd3466c",
+  "runs": [
+    {
+      "run_id": "run_20010101_20011231_v2",
+      "model_id": "81b65dd3466c",
+      "project_id": "20e9da121843",
+      "start_date": "2001-01-01T00:00:00",
+      "end_date": "2001-12-31T00:00:00",
+      "output_path": "runs/run_20010101_20011231_v2",
+      "state_output_path": "runs/run_20010101_20011231_v2/outstate.nc",
+      "state_input_path": null,
+      "config_hash": "827195e6f00c12a93ca581cd70a68fdabb52b38481fb8399ba188d5d47ec1d2f",
+      "forcing_source": {
+        "path": "D:\\hydrohub\\projects\\jawa\\models\\wflow_pet\\inmaps.nc",
+        "fingerprint": "07d839d713e9bf551030d11bd32bb25559f5bdf081aed709bc1adcf224dc0036",
+        "size": 28351325
+      },
+      "status": "completed",
+      "created_at": "2026-09-22T01:59:40.773988+00:00"
+    },
+    {
+      "run_id": "run_20020101_20021231",
+      "model_id": "81b65dd3466c",
+      "project_id": "20e9da121843",
+      "start_date": "2002-01-01T00:00:00",
+      "end_date": "2002-12-31T00:00:00",
+      "output_path": "runs/run_20020101_20021231",
+      "state_output_path": "runs/run_20020101_20021231/outstate.nc",
+      "state_input_path": "runs/run_20010101_20011231_v2/outstate.nc",
+      "config_hash": "827195e6f00c12a93ca581cd70a68fdabb52b38481fb8399ba188d5d47ec1d2f",
+      "forcing_source": {
+        "path": "D:\\hydrohub\\projects\\jawa\\models\\wflow_pet\\inmaps.nc",
+        "fingerprint": "c62696b5c602e3910ea1edfd061a2e10fd980099ce1db9042c9d0d61ffe7b8c2",
+        "size": 28477731
+      },
+      "status": "completed",
+      "created_at": "2026-09-22T02:18:31.935352+00:00"
+    },
+    {
+      "run_id": "run_20030101_20051231",
+      "model_id": "81b65dd3466c",
+      "project_id": "20e9da121843",
+      "start_date": "2003-01-01T00:00:00",
+      "end_date": "2005-12-31T00:00:00",
+      "output_path": "runs/run_20030101_20051231",
+      "state_output_path": "runs/run_20030101_20051231/outstate.nc",
+      "state_input_path": "runs/run_20020101_20021231/outstate.nc",
+      "config_hash": "827195e6f00c12a93ca581cd70a68fdabb52b38481fb8399ba188d5d47ec1d2f",
+      "forcing_source": {
+        "path": "D:\\hydrohub\\projects\\jawa\\models\\wflow_pet\\inmaps.nc",
+        "fingerprint": "c8aae0338a107b057d6826427decd9307686da4c655699f0cd2f78870c1a3b57",
+        "size": 85266323
+      },
+      "status": "completed",
+      "created_at": "2026-09-22T02:36:53.210083+00:00"
+    }
+  ]
+}

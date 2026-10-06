@@ -1,0 +1,20 @@
+{
+  "active_catalog_file": "wflow_sumatrayml.yml",
+  "active_wflow_file": "wflow_ku.yml",
+  "hydromt_mode": "Update",
+  "hydromt_executable": "D:\\hydrohub\\.venv\\Scripts\\hydromt.EXE",
+  "hydromt_catalog_file": "wflow_sumatrayml.yml",
+  "hydromt_recipe_file": "wflow_ku.yml",
+  "hydromt_model_root": "D:\\hydrohub\\projects\\Sumatra\\models\\wflow",
+  "hydromt_update_target": "D:\\hydrohub\\projects\\Sumatra\\models\\wflow_sumatra",
+  "hydromt_force_overwrite": true,
+  "hydromt_verbose": true,
+  "julia_run_history": {
+    "D:\\hydrohub\\projects\\jawa\\models\\wflow_pet": 545.255,
+    "D:\\hydrohub\\projects\\Sumatra\\models\\wflow_pet": 531.283,
+    "D:\\hydrohub\\projects\\Sumatra\\models\\wflow_sumatra": 13981.85
+  },
+  "forcing_model_root": "D:\\hydrohub\\projects\\Sumatra\\models\\wflow_sumatra",
+  "results_model_root": "D:\\hydrohub\\projects\\Sumatra\\models\\wflow_sumatra",
+  "julia_model_root": "D:\\hydrohub\\projects\\Sumatra\\models\\wflow_sumatra"
+}

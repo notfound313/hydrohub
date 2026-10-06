@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hydrohub"
+version = "0.1.0"
+description = "Desktop workspace for HydroMT and Wflow.jl workflows"
+requires-python = ">=3.11"
+authors = [
+    { name = "Founded 040", email = "mymbg@yuhu.com" }
+]
+dependencies = ["keyring>=25.0", "packaging>=24.0", "PySide6>=6.8", "PySide6-Fluent-Widgets>=1.11,<2", "PyYAML>=6.0"]
+
+[project.optional-dependencies]
+data-tools = [
+    "affine>=2.4,<3.0",
+    "cdsapi>=0.7",
+    "geopandas>=1.0",
+    "hydromt>=1.4",
+    "hydromt_wflow>=1.0",
+    "matplotlib>=3.9",
+    "netCDF4>=1.7",
+    "numpy>=2.0",
+    "openpyxl>=3.1",
+    "pandas>=2.2",
+    "paramiko>=3.5",
+    "Pillow>=10.0",
+    "pyqtgraph>=0.13",
+    "pyflwdir>=0.5",
+    "pyogrio>=0.10",
+    "pyproj>=3.6",
+    "rasterio>=1.4,<1.5",
+    "requests>=2.32",
+    "rioxarray>=0.18",
+    "scipy>=1.14",
+    "shapely>=2.0",
+    "xarray>=2025.1",
+]
+
+[project.scripts]
+hydrohub = "hydrohub.main:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+hydrohub = ["ui/assets/*", "ui/assets/images/*"]

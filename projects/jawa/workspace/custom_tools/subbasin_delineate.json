@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "tool_id": "subbasin_delineate",
+  "parameters": {
+    "input": "D:\\hydrohub\\projects\\jawa\\manifests_data\\manifest_data\\02_hydromt_rebuilt\\hydrography_rebuilt\\flwdir.tif",
+    "ftype": "d8",
+    "area_min": "250",
+    "output": "D:\\hydrohub\\projects\\jawa\\data\\preparing_data\\hydrography",
+    "west": "105.167686",
+    "south": "-8.780732",
+    "east": "115.899406",
+    "north": "-5.72369",
+    "aoi_mode": "none",
+    "aoi_path": "D:\\hydrohub\\projects\\jawa\\workspace\\aoi.geojson"
+  },
+  "environment": {},
+  "secrets": []
+}

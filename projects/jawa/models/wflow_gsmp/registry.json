@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "model_id": "6b9cf33fd3fb",
+  "runs": [
+    {
+      "run_id": "run_20010101_20011231",
+      "model_id": "6b9cf33fd3fb",
+      "project_id": "20e9da121843",
+      "start_date": "2000-01-01T00:00:00",
+      "end_date": "2001-12-31T00:00:00",
+      "output_path": "runs/run_20010101_20011231",
+      "state_output_path": "runs/run_20010101_20011231/outstate.nc",
+      "state_input_path": null,
+      "config_hash": "2c8a407952e4a7a41e72bcf658e3474535cdcface9f4e084d00d8553c8b54f16",
+      "forcing_source": {
+        "path": "D:\\hydrohub\\projects\\jawa\\models\\wflow_gsmp\\inmaps.nc",
+        "fingerprint": "982a6c33beeada78193562bb6d837f43c816d54cd190a308d6b2b13395e4ef77",
+        "size": 25200699
+      },
+      "status": "failed",
+      "created_at": "2026-09-17T06:54:59.935482+00:00"
+    }
+  ]
+}

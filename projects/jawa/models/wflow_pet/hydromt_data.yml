@@ -1,0 +1,15 @@
+meta:
+  root: None
+
+era_5:
+  uri: D:/hydrohub/projects/jawa/data/preparing_data/era5/era5land_pet_jawa_daily.nc
+  driver:
+    options:
+      chunks: null
+      decode_times: true
+    name: raster_xarray
+  metadata:
+    crs: 4326
+    category: forcing
+  data_type: RasterDataset
+  root: None

@@ -1,0 +1,31 @@
+{
+  "tool_id": "wflow.julia",
+  "tool_name": "Run Wflow with Julia",
+  "category": "simulation",
+  "module": "Wflow",
+  "tool_version": "1",
+  "command": [
+    "C:\\Users\\Tekni\\AppData\\Local\\Microsoft\\WindowsApps\\julia.EXE",
+    "run_wflow.jl"
+  ],
+  "parameters": [
+    "run_wflow.jl"
+  ],
+  "working_directory": "D:\\hydrohub\\sample",
+  "started_at": "2026-09-16T05:10:12.143293+00:00",
+  "completed_at": "2026-09-16T05:10:16.189452+00:00",
+  "duration_seconds": 4.046,
+  "exit_code": 62097,
+  "status": "ERROR",
+  "summary": [
+    "\u2713 Menjalankan simulasi: wflow_sbm.toml"
+  ],
+  "outputs": [],
+  "warnings": [],
+  "errors": [],
+  "log_file": "D:\\hydrohub\\projects\\jawa\\manifests\\20260916_121012_wflow_julia.log",
+  "environment_profile": {
+    "python": "C:\\Users\\Tekni\\AppData\\Local\\Microsoft\\WindowsApps\\julia.EXE"
+  },
+  "platform": "nt"
+}

@@ -1,0 +1,59 @@
+{
+  "tool_id": "hydromt.cli",
+  "tool_name": "HydroMT Build",
+  "category": "model",
+  "module": "hydromt",
+  "tool_version": "1",
+  "command": [
+    "D:\\hydrohub\\.venv\\Scripts\\hydromt.EXE",
+    "build",
+    "wflow_sbm",
+    "D:\\hydrohub\\projects\\jawa\\models\\wflow",
+    "-i",
+    "D:\\hydrohub\\projects\\jawa\\configs\\hydromt\\jawa.yml",
+    "-d",
+    "D:\\hydrohub\\projects\\jawa\\workspace\\runtime_catalogs\\wflow_catalog.yml",
+    "--fo",
+    "-v"
+  ],
+  "parameters": [
+    "build",
+    "wflow_sbm",
+    "D:\\hydrohub\\projects\\jawa\\models\\wflow",
+    "-i",
+    "D:\\hydrohub\\projects\\jawa\\configs\\hydromt\\jawa.yml",
+    "-d",
+    "D:\\hydrohub\\projects\\jawa\\workspace\\runtime_catalogs\\wflow_catalog.yml",
+    "--fo",
+    "-v"
+  ],
+  "working_directory": "D:\\hydrohub\\projects\\jawa",
+  "started_at": "2026-09-17T07:02:43.773645+00:00",
+  "completed_at": "2026-09-17T07:04:48.997438+00:00",
+  "duration_seconds": 125.224,
+  "exit_code": 0,
+  "status": "WARNING",
+  "summary": [
+    "2026-09-17 14:04:47,398 - hydromt.model.components.geoms - geoms - INFO - wflow_sbm.geoms: Writing geoms to D:\\hydrohub\\projects\\jawa\\models\\wflow\\staticgeoms\\meta_basins_highres.geojson.",
+    "2026-09-17 14:04:48,107 - hydromt.model.components.geoms - geoms - INFO - wflow_sbm.geoms: Writing geoms to D:\\hydrohub\\projects\\jawa\\models\\wflow\\staticgeoms\\basins.geojson.",
+    "2026-09-17 14:04:48,195 - hydromt.model.components.geoms - geoms - INFO - wflow_sbm.geoms: Writing geoms to D:\\hydrohub\\projects\\jawa\\models\\wflow\\staticgeoms\\rivers.geojson.",
+    "2026-09-17 14:04:48,247 - hydromt.model.components.geoms - geoms - INFO - wflow_sbm.geoms: Writing geoms to D:\\hydrohub\\projects\\jawa\\models\\wflow\\staticgeoms\\outlets.geojson.",
+    "2026-09-17 14:04:48,253 - hydromt.hydromt_wflow.components.forcing - forcing - WARNING - Write forcing skipped: dataset is empty (no variables or data).",
+    "2026-09-17 14:04:48,253 - hydromt.model.components.tables - tables - INFO - wflow_sbm.tables: No tables found, skip writing.",
+    "2026-09-17 14:04:48,253 - hydromt.model.components.grid - grid - INFO - wflow_sbm.states: No grid data found, skip writing.",
+    "2026-09-17 14:04:48,253 - hydromt.hydromt_wflow.components.config - config - INFO - Writing model config to D:/hydrohub/projects/jawa/models/wflow/wflow_sbm.toml."
+  ],
+  "outputs": [],
+  "warnings": [
+    "2026-09-17 14:03:25,068 - hydromt.readers - readers - WARNING - nodata value missing for D:/hydrohub/projects/jawa/data/preparing_data/landuse/esa_worldcover_2021_jawa.tif",
+    "2026-09-17 14:03:25,144 - hydromt.gis.raster - raster - WARNING - No numerical nodata value found, skipping set_nodata",
+    "2026-09-17 14:03:58,027 - hydromt.data_catalog.adapters.rasterdataset - rasterdataset - WARNING - RasterDataset: CRS from data catalog does not match CRS  of data. The original CRS will be used. Please check your catalog.",
+    "2026-09-17 14:04:48,253 - hydromt.hydromt_wflow.components.forcing - forcing - WARNING - Write forcing skipped: dataset is empty (no variables or data)."
+  ],
+  "errors": [],
+  "log_file": "D:\\hydrohub\\projects\\jawa\\manifests\\20260917_140243_hydromt_cli.log",
+  "environment_profile": {
+    "python": "D:\\hydrohub\\.venv\\Scripts\\hydromt.EXE"
+  },
+  "platform": "nt"
+}

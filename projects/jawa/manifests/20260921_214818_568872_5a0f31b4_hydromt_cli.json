@@ -1,0 +1,60 @@
+{
+  "tool_id": "hydromt.cli",
+  "tool_name": "HydroMT Update",
+  "category": "model",
+  "module": "hydromt",
+  "tool_version": "1",
+  "command": [
+    "D:\\hydrohub\\.venv\\Scripts\\hydromt.EXE",
+    "update",
+    "wflow_sbm",
+    "D:\\hydrohub\\projects\\jawa\\models\\wflow",
+    "-o",
+    "D:/hydrohub/projects/jawa/models/wflow_pet",
+    "-i",
+    "D:\\hydrohub\\projects\\jawa\\configs\\hydromt\\wflow.yml",
+    "-d",
+    "D:\\hydrohub\\projects\\jawa\\workspace\\runtime_catalogs\\update_wflow.yml",
+    "--fo",
+    "-v"
+  ],
+  "parameters": [
+    "update",
+    "wflow_sbm",
+    "D:\\hydrohub\\projects\\jawa\\models\\wflow",
+    "-o",
+    "D:/hydrohub/projects/jawa/models/wflow_pet",
+    "-i",
+    "D:\\hydrohub\\projects\\jawa\\configs\\hydromt\\wflow.yml",
+    "-d",
+    "D:\\hydrohub\\projects\\jawa\\workspace\\runtime_catalogs\\update_wflow.yml",
+    "--fo",
+    "-v"
+  ],
+  "working_directory": "D:\\hydrohub\\projects\\jawa",
+  "started_at": "2026-09-21T14:48:18.568864+00:00",
+  "completed_at": "2026-09-21T14:48:28.108783+00:00",
+  "duration_seconds": 9.54,
+  "exit_code": 0,
+  "status": "WARNING",
+  "summary": [
+    "[####################################### ] | 98% Completed | 4.74 s",
+    "[####################################### ] | 99% Completed | 4.84 s",
+    "[####################################### ] | 99% Completed | 4.94 s",
+    "[####################################### ] | 99% Completed | 5.04 s",
+    "[####################################### ] | 99% Completed | 5.14 s",
+    "[####################################### ] | 99% Completed | 5.24 s",
+    "[####################################### ] | 99% Completed | 5.34 s",
+    "[########################################] | 100% Completed | 5.44 s"
+  ],
+  "outputs": [],
+  "warnings": [
+    "2026-09-21 21:48:21,344 - hydromt.hydromt_wflow.components.states - states - WARNING - CRS not found in states data, setting to model CRS."
+  ],
+  "errors": [],
+  "log_file": "D:\\hydrohub\\projects\\jawa\\manifests\\20260921_214818_568872_5a0f31b4_hydromt_cli.log",
+  "environment_profile": {
+    "python": "D:\\hydrohub\\.venv\\Scripts\\hydromt.EXE"
+  },
+  "platform": "nt"
+}

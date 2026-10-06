@@ -1,0 +1,40 @@
+{
+  "tool_id": "wflow.julia",
+  "tool_name": "Run Wflow with Julia",
+  "category": "simulation",
+  "module": "Wflow",
+  "tool_version": "1",
+  "command": [
+    "C:\\Users\\Tekni\\AppData\\Local\\Microsoft\\WindowsApps\\julia.EXE",
+    "run_wflow.jl"
+  ],
+  "parameters": [
+    "run_wflow.jl"
+  ],
+  "working_directory": "D:\\hydrohub\\sample",
+  "started_at": "2026-09-21T07:40:42.052213+00:00",
+  "completed_at": "2026-09-21T07:41:43.988263+00:00",
+  "duration_seconds": 61.936,
+  "exit_code": 1,
+  "status": "ERROR",
+  "summary": [
+    "@ D:\\hydrohub\\sample\\run_wflow.jl:22",
+    "[24] include(mod::Module, _path::String)",
+    "@ Base .\\Base.jl:306",
+    "[25] exec_options(opts::Base.JLOptions)",
+    "@ Base .\\client.jl:317",
+    "[26] _start()",
+    "@ Base .\\client.jl:550",
+    "in expression starting at D:\\hydrohub\\sample\\run_wflow.jl:22"
+  ],
+  "outputs": [],
+  "warnings": [],
+  "errors": [
+    "ERROR: LoadError: NetCDF error: Variable 'snow_water_depth' not found in file D:\\hydrohub\\projects\\jawa\\models\\wflow_pet\\runs\\run_20010101_20011231\\outstate.nc (NetCDF error code: -49)"
+  ],
+  "log_file": "D:\\hydrohub\\projects\\jawa\\manifests\\20260921_144042_052225_e982a6ce_wflow_julia.log",
+  "environment_profile": {
+    "python": "C:\\Users\\Tekni\\AppData\\Local\\Microsoft\\WindowsApps\\julia.EXE"
+  },
+  "platform": "nt"
+}

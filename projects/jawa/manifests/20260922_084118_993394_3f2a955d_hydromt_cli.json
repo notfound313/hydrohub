@@ -1,0 +1,64 @@
+{
+  "tool_id": "hydromt.cli",
+  "tool_name": "HydroMT Update",
+  "category": "model",
+  "module": "hydromt",
+  "tool_version": "1",
+  "command": [
+    "D:\\hydrohub\\.venv\\Scripts\\hydromt.EXE",
+    "update",
+    "wflow_sbm",
+    "D:\\hydrohub\\projects\\jawa\\models\\wflow",
+    "-o",
+    "D:/hydrohub/projects/jawa/models/wflow_pet",
+    "-i",
+    "D:\\hydrohub\\projects\\jawa\\configs\\hydromt\\wflow.yml",
+    "-d",
+    "D:\\hydrohub\\projects\\jawa\\workspace\\runtime_catalogs\\update_wflow.yml",
+    "--fo",
+    "-v"
+  ],
+  "parameters": [
+    "update",
+    "wflow_sbm",
+    "D:\\hydrohub\\projects\\jawa\\models\\wflow",
+    "-o",
+    "D:/hydrohub/projects/jawa/models/wflow_pet",
+    "-i",
+    "D:\\hydrohub\\projects\\jawa\\configs\\hydromt\\wflow.yml",
+    "-d",
+    "D:\\hydrohub\\projects\\jawa\\workspace\\runtime_catalogs\\update_wflow.yml",
+    "--fo",
+    "-v"
+  ],
+  "working_directory": "D:\\hydrohub\\projects\\jawa",
+  "started_at": "2026-09-22T01:41:18.993385+00:00",
+  "completed_at": "2026-09-22T01:41:30.364436+00:00",
+  "duration_seconds": 11.371,
+  "exit_code": 0,
+  "status": "WARNING",
+  "summary": [
+    "[####################################### ] | 98% Completed | 5.80 s",
+    "[########################################] | 100% Completed | 5.90 s",
+    "2026-09-22 08:41:29,894 - hydromt.model.components.tables - tables - INFO - wflow_sbm.tables: No tables found, skip writing.",
+    "2026-09-22 08:41:29,894 - hydromt.model.components.grid - grid - INFO - wflow_sbm.states: No grid data found, skip writing.",
+    "2026-09-22 08:41:29,894 - hydromt.hydromt_wflow.components.config - config - INFO - Writing model config to D:/hydrohub/projects/jawa/models/wflow_pet/wflow_sbm.toml.",
+    "2026-09-22 08:41:29,946 - hydromt.typing.deferred_file_close - deferred_file_close - ERROR - Could not write to destination file D:\\hydrohub\\projects\\jawa\\models\\wflow_pet\\staticmaps.nc because the following error was raised: [WinError 33] The process cannot access the file because another process has locked a portion of the file",
+    "2026-09-22 08:41:29,947 - hydromt.typing.deferred_file_close - deferred_file_close - ERROR - Could not write to destination file D:\\hydrohub\\projects\\jawa\\models\\wflow_pet\\staticmaps.nc because the following error was raised: [WinError 33] The process cannot access the file because another process has locked a portion of the file",
+    "2026-09-22 08:41:29,947 - hydromt.typing.deferred_file_close - deferred_file_close - ERROR - Max write attempts to file D:\\hydrohub\\projects\\jawa\\models\\wflow_pet\\staticmaps.nc exceeded. Skipping... Instead, data was written to a temporary file: D:\\hydrohub\\projects\\jawa\\models\\wflow_pet\\staticmaps_635cbc1c.nc."
+  ],
+  "outputs": [],
+  "warnings": [
+    "2026-09-22 08:41:21,941 - hydromt.hydromt_wflow.components.states - states - WARNING - CRS not found in states data, setting to model CRS."
+  ],
+  "errors": [
+    "2026-09-22 08:41:29,946 - hydromt.typing.deferred_file_close - deferred_file_close - ERROR - Could not write to destination file D:\\hydrohub\\projects\\jawa\\models\\wflow_pet\\staticmaps.nc because the following error was raised: [WinError 33] The process cannot access the file because another process has locked a portion of the file",
+    "2026-09-22 08:41:29,947 - hydromt.typing.deferred_file_close - deferred_file_close - ERROR - Could not write to destination file D:\\hydrohub\\projects\\jawa\\models\\wflow_pet\\staticmaps.nc because the following error was raised: [WinError 33] The process cannot access the file because another process has locked a portion of the file",
+    "2026-09-22 08:41:29,947 - hydromt.typing.deferred_file_close - deferred_file_close - ERROR - Max write attempts to file D:\\hydrohub\\projects\\jawa\\models\\wflow_pet\\staticmaps.nc exceeded. Skipping... Instead, data was written to a temporary file: D:\\hydrohub\\projects\\jawa\\models\\wflow_pet\\staticmaps_635cbc1c.nc."
+  ],
+  "log_file": "D:\\hydrohub\\projects\\jawa\\manifests\\20260922_084118_993394_3f2a955d_hydromt_cli.log",
+  "environment_profile": {
+    "python": "D:\\hydrohub\\.venv\\Scripts\\hydromt.EXE"
+  },
+  "platform": "nt"
+}

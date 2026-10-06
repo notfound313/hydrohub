@@ -1,0 +1,9 @@
+starttime = "2020-01-01T00:00:00"
+endtime = "2020-12-31T00:00:00"
+
+[time]
+timestepsecs = 86400
+
+[output]
+netcdf = "output.nc"
+csv = "output.csv"

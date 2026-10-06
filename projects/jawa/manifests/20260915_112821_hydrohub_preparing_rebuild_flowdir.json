@@ -1,0 +1,36 @@
+{
+  "tool_id": "hydrohub.preparing.rebuild_flowdir",
+  "category": "preparing",
+  "module": "hydrohub.tools.rebuild_flowdir",
+  "tool_version": "1.0.0",
+  "command": [
+    "D:\\hydrohub\\.venv\\Scripts\\python.exe",
+    "-u",
+    "-m",
+    "hydrohub.tools.rebuild_flowdir",
+    "--dem",
+    "D:\\hydrohub\\projects\\jawa\\data\\raw\\hydrography\\merit\\dem_jawa.tif",
+    "--uparea",
+    "D:\\hydrohub\\projects\\jawa\\data\\raw\\hydrography\\merit\\uparea_jawa_merit_km2.tif",
+    "--old-d8",
+    "D:\\hydrohub\\projects\\jawa\\data\\raw\\hydrography\\merit\\d8_jawa.tif",
+    "--output-dir",
+    "D:\\hydrohub\\projects\\jawa\\data\\preparing_data\\hydrography_rebuilt",
+    "--outlets",
+    "edge",
+    "--max-depth",
+    "-1.0",
+    "--river-threshold-km2",
+    "50.0"
+  ],
+  "working_directory": "D:\\hydrohub\\projects\\jawa",
+  "started_at": "2026-09-15T04:28:20.271806+00:00",
+  "completed_at": "2026-09-15T04:28:21.132525+00:00",
+  "exit_code": 1,
+  "status": "ERROR",
+  "log_file": "D:\\hydrohub\\projects\\jawa\\manifests\\20260915_112820_hydrohub_preparing_rebuild_flowdir.log",
+  "environment_profile": {
+    "python": "D:\\hydrohub\\.venv\\Scripts\\python.exe"
+  },
+  "platform": "nt"
+}

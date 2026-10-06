@@ -1,0 +1,16 @@
+{
+  "current_step": 5,
+  "steps": {
+    "project": "VALID",
+    "aoi": "VALID",
+    "environment": "VALID",
+    "global_data": "VALID",
+    "wflow_catalog": "VALID",
+    "data_entries": "VALID",
+    "wflow_yml": "VALID",
+    "validation": "BLOCKED",
+    "ready": "BLOCKED"
+  },
+  "total_steps": 9,
+  "updated_at": "2026-10-02T04:34:35.749371+00:00"
+}

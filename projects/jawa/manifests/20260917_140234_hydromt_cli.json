@@ -1,0 +1,67 @@
+{
+  "tool_id": "hydromt.cli",
+  "tool_name": "HydroMT Build",
+  "category": "model",
+  "module": "hydromt",
+  "tool_version": "1",
+  "command": [
+    "D:\\hydrohub\\.venv\\Scripts\\hydromt.EXE",
+    "build",
+    "wflow_sbm",
+    "D:\\hydrohub\\projects\\jawa\\models\\wflow",
+    "-i",
+    "D:\\hydrohub\\projects\\jawa\\configs\\hydromt\\wflow.yml",
+    "-d",
+    "D:\\hydrohub\\projects\\jawa\\workspace\\runtime_catalogs\\wflow_catalog.yml",
+    "--fo",
+    "-v"
+  ],
+  "parameters": [
+    "build",
+    "wflow_sbm",
+    "D:\\hydrohub\\projects\\jawa\\models\\wflow",
+    "-i",
+    "D:\\hydrohub\\projects\\jawa\\configs\\hydromt\\wflow.yml",
+    "-d",
+    "D:\\hydrohub\\projects\\jawa\\workspace\\runtime_catalogs\\wflow_catalog.yml",
+    "--fo",
+    "-v"
+  ],
+  "working_directory": "D:\\hydrohub\\projects\\jawa",
+  "started_at": "2026-09-17T07:02:31.956621+00:00",
+  "completed_at": "2026-09-17T07:02:34.555154+00:00",
+  "duration_seconds": 2.599,
+  "exit_code": 1,
+  "status": "ERROR",
+  "summary": [
+    "method(**merged)",
+    "~~~~~~^^^^^^^^^^",
+    "File \"D:\\hydrohub\\.venv\\Lib\\site-packages\\hydromt_wflow\\wflow_sbm.py\", line 3286, in setup_precip_forcing",
+    "mask = self.staticmaps.data[self._MAPS[\"basins\"]].values > 0",
+    "~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^",
+    "File \"D:\\hydrohub\\.venv\\Lib\\site-packages\\xarray\\core\\dataset.py\", line 1421, in __getitem__",
+    "raise KeyError(message) from e",
+    "KeyError: \"No variable named 'subcatchment'. Variables on the dataset include []\""
+  ],
+  "outputs": [],
+  "warnings": [],
+  "errors": [
+    "KeyError: 'subcatchment'",
+    "Traceback (most recent call last):",
+    "raise KeyError(message) from e",
+    "KeyError: \"No variable named 'subcatchment'. Variables on the dataset include []\"",
+    "Traceback (most recent call last):",
+    "KeyError: 'subcatchment'",
+    "Traceback (most recent call last):",
+    "raise KeyError(key)",
+    "KeyError: 'subcatchment'",
+    "Traceback (most recent call last):",
+    "raise KeyError(message) from e",
+    "KeyError: \"No variable named 'subcatchment'. Variables on the dataset include []\""
+  ],
+  "log_file": "D:\\hydrohub\\projects\\jawa\\manifests\\20260917_140231_hydromt_cli.log",
+  "environment_profile": {
+    "python": "D:\\hydrohub\\.venv\\Scripts\\hydromt.EXE"
+  },
+  "platform": "nt"
+}

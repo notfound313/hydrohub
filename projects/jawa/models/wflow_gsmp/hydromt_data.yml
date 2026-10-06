@@ -1,0 +1,27 @@
+meta:
+  root: None
+
+era5_jawa:
+  uri: D:/hydrohub/HydroHub_Global_Database/climate/era5land_pet_jawa_daily.nc
+  driver:
+    options: {}
+    name: raster_xarray
+  metadata:
+    crs: 4326
+    category: forcing
+  data_type: RasterDataset
+  root: None
+
+gsmp_jawa:
+  uri: D:/hydrohub/HydroHub_Global_Database/climate/gsmap_daily_jawa_hydromt.nc
+  driver:
+    options:
+      chunks:
+        time: 336
+      decode_times: true
+    name: raster_xarray
+  metadata:
+    crs: 4326
+    category: forcing
+  data_type: RasterDataset
+  root: None

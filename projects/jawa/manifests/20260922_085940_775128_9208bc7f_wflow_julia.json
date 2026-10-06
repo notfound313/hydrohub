@@ -1,0 +1,42 @@
+{
+  "tool_id": "wflow.julia",
+  "tool_name": "Run Wflow with Julia",
+  "category": "simulation",
+  "module": "Wflow",
+  "tool_version": "1",
+  "command": [
+    "C:\\Users\\Tekni\\AppData\\Local\\Microsoft\\WindowsApps\\julia.EXE",
+    "run_wflow.jl"
+  ],
+  "parameters": [
+    "run_wflow.jl"
+  ],
+  "working_directory": "D:\\hydrohub\\src\\hydrohub\\julia",
+  "started_at": "2026-09-22T01:59:40.775120+00:00",
+  "completed_at": "2026-09-22T02:05:26.142469+00:00",
+  "duration_seconds": 345.367,
+  "exit_code": 0,
+  "status": "WARNING",
+  "summary": [
+    "Progress:  99%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588|  ETA: 0:00:03",
+    "Progress:  99%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588|  ETA: 0:00:02",
+    "Progress: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| Time: 0:05:00",
+    "Progress: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| Time: 0:05:00",
+    "[ Info: Simulation duration: 5 minutes, 843 milliseconds",
+    "\u250c Info: Write output states to netCDF file",
+    "\u2514 D:\\hydrohub\\projects\\jawa\\models\\wflow_pet\\runs\\run_20010101_20011231_v2\\outstate.nc.",
+    "\u2713 Simulasi selesai!"
+  ],
+  "outputs": [],
+  "warnings": [
+    "\u250c Warning: State variable snowpack_liquid_water__depth provided, but is not",
+    "\u250c Warning: State variable soil_surface__temperature provided, but is not used",
+    "\u250c Warning: State variable snowpack_dry_snow__leq_depth provided, but is not"
+  ],
+  "errors": [],
+  "log_file": "D:\\hydrohub\\projects\\jawa\\manifests\\20260922_085940_775128_9208bc7f_wflow_julia.log",
+  "environment_profile": {
+    "python": "C:\\Users\\Tekni\\AppData\\Local\\Microsoft\\WindowsApps\\julia.EXE"
+  },
+  "platform": "nt"
+}

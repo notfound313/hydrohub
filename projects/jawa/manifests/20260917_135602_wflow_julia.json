@@ -1,0 +1,44 @@
+{
+  "tool_id": "wflow.julia",
+  "tool_name": "Run Wflow with Julia",
+  "category": "simulation",
+  "module": "Wflow",
+  "tool_version": "1",
+  "command": [
+    "C:\\Users\\Tekni\\AppData\\Local\\Microsoft\\WindowsApps\\julia.EXE",
+    "run_wflow.jl"
+  ],
+  "parameters": [
+    "run_wflow.jl"
+  ],
+  "working_directory": "D:\\hydrohub\\sample",
+  "started_at": "2026-09-17T06:54:59.938240+00:00",
+  "completed_at": "2026-09-17T06:56:02.402057+00:00",
+  "duration_seconds": 62.464,
+  "exit_code": 1,
+  "status": "ERROR",
+  "summary": [
+    "@ D:\\hydrohub\\sample\\run_wflow.jl:22",
+    "[17] include(mod::Module, _path::String)",
+    "@ Base .\\Base.jl:306",
+    "[18] exec_options(opts::Base.JLOptions)",
+    "@ Base .\\client.jl:317",
+    "[19] _start()",
+    "@ Base .\\client.jl:550",
+    "in expression starting at D:\\hydrohub\\sample\\run_wflow.jl:22"
+  ],
+  "outputs": [],
+  "warnings": [
+    "\u250c Warning: State variable snowpack_liquid_water__depth provided, but is not",
+    "\u250c Warning: State variable soil_surface__temperature provided, but is not used",
+    "\u250c Warning: State variable snowpack_dry_snow__leq_depth provided, but is not"
+  ],
+  "errors": [
+    "ERROR: LoadError: DomainError with time 2000-01-02T00:00:00 before dataset begin 2001-01-01T00:00:00:"
+  ],
+  "log_file": "D:\\hydrohub\\projects\\jawa\\manifests\\20260917_135459_wflow_julia.log",
+  "environment_profile": {
+    "python": "C:\\Users\\Tekni\\AppData\\Local\\Microsoft\\WindowsApps\\julia.EXE"
+  },
+  "platform": "nt"
+}

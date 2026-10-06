@@ -1,0 +1,68 @@
+{
+  "tool_id": "hydromt.cli",
+  "tool_name": "HydroMT Update",
+  "category": "model",
+  "module": "hydromt",
+  "tool_version": "1",
+  "command": [
+    "D:\\hydrohub\\.venv\\Scripts\\hydromt.EXE",
+    "update",
+    "wflow_sbm",
+    "D:\\hydrohub\\projects\\jawa\\models\\wflow",
+    "-o",
+    "D:/hydrohub/projects/jawa/models/wflow_pet",
+    "-i",
+    "D:\\hydrohub\\projects\\jawa\\configs\\hydromt\\jawa.yml",
+    "-d",
+    "D:\\hydrohub\\projects\\jawa\\workspace\\runtime_catalogs\\update_wflow.yml",
+    "--fo",
+    "-v"
+  ],
+  "parameters": [
+    "update",
+    "wflow_sbm",
+    "D:\\hydrohub\\projects\\jawa\\models\\wflow",
+    "-o",
+    "D:/hydrohub/projects/jawa/models/wflow_pet",
+    "-i",
+    "D:\\hydrohub\\projects\\jawa\\configs\\hydromt\\jawa.yml",
+    "-d",
+    "D:\\hydrohub\\projects\\jawa\\workspace\\runtime_catalogs\\update_wflow.yml",
+    "--fo",
+    "-v"
+  ],
+  "working_directory": "D:\\hydrohub\\projects\\jawa",
+  "started_at": "2026-09-22T01:19:19.291649+00:00",
+  "completed_at": "2026-09-22T01:19:22.539581+00:00",
+  "duration_seconds": 3.248,
+  "exit_code": 1,
+  "status": "ERROR",
+  "summary": [
+    "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+    "strategy=handle_nodata,",
+    "^^^^^^^^^^^^^^^^^^^^^^^",
+    ")",
+    "^",
+    "File \"D:\\hydrohub\\.venv\\Lib\\site-packages\\hydromt\\error.py\", line 55, in exec_nodata_strat",
+    "raise NoDataException(msg)",
+    "hydromt.error.NoDataException: Resolver 'convention' found no files at D:/hydrohub/projects/jawa/merit_jawa."
+  ],
+  "outputs": [],
+  "warnings": [
+    "2026-09-22 08:19:22,030 - hydromt.hydromt_wflow.components.states - states - WARNING - CRS not found in states data, setting to model CRS."
+  ],
+  "errors": [
+    "2026-09-22 08:19:22,188 - hydromt - log - ERROR - Unhandled exception occured.",
+    "Traceback (most recent call last):",
+    "File \"D:\\hydrohub\\.venv\\Lib\\site-packages\\hydromt\\error.py\", line 55, in exec_nodata_strat",
+    "hydromt.error.NoDataException: Resolver 'convention' found no files at D:/hydrohub/projects/jawa/merit_jawa.",
+    "Traceback (most recent call last):",
+    "File \"D:\\hydrohub\\.venv\\Lib\\site-packages\\hydromt\\error.py\", line 55, in exec_nodata_strat",
+    "hydromt.error.NoDataException: Resolver 'convention' found no files at D:/hydrohub/projects/jawa/merit_jawa."
+  ],
+  "log_file": "D:\\hydrohub\\projects\\jawa\\manifests\\20260922_081919_291658_a948d970_hydromt_cli.log",
+  "environment_profile": {
+    "python": "D:\\hydrohub\\.venv\\Scripts\\hydromt.EXE"
+  },
+  "platform": "nt"
+}

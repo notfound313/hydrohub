@@ -1,0 +1,27 @@
+meta:
+  version: v1.0.0
+  name: wflow_sumatrayml
+
+pet_sumatra:
+  data_type: RasterDataset
+  uri: preparing_data/forcing/pet.nc
+  driver:
+    name: raster_xarray
+    options:
+      chunks: 'auto' 
+      decode_times: true
+  metadata:
+    crs: '4326'
+    category: forcing
+
+gsmap_sumatra:
+  data_type: RasterDataset
+  uri: preparing_data/forcing/rainfall.nc
+  driver:
+    name: raster_xarray
+    options:
+      chunks: 'auto' 
+      decode_times: true
+  metadata:
+    crs: '4326'
+    category: rainfall

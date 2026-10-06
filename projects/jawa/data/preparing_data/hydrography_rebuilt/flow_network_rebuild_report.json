@@ -1,0 +1,26 @@
+{
+  "output_dir": "D:\\hydrohub\\projects\\jawa\\data\\preparing_data\\hydrography_rebuilt",
+  "crs": "EPSG:4326",
+  "shape": [
+    3758,
+    11641
+  ],
+  "method": "pyflwdir.dem.fill_depressions() direct D8 derivation (no repair_loops)",
+  "outlets_mode": "edge",
+  "max_depth": -1.0,
+  "valid_cells": 15674102,
+  "flow_valid": true,
+  "pits": 3590,
+  "river_threshold_km2": 50.0,
+  "upa_comparison": {
+    "mae_km2": 5.110613198642384,
+    "rmse_km2": 162.82976224267134,
+    "max_abs_difference_km2": 15656.578709755311
+  },
+  "hole_comparison_vs_old_repair_loops_output": {
+    "old_pit_cells": 66714,
+    "new_pit_cells": 3590,
+    "old_pit_cells_resolved": 63170
+  },
+  "hydromt_ready": true
+}

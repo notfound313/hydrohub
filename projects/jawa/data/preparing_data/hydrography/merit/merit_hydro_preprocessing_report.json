@@ -1,0 +1,41 @@
+{
+  "input_file": "D:\\hydrohub\\projects\\jawa\\data\\raw\\hydrography\\MERIT_Hydro_Jawa.tif",
+  "output_dir": "D:\\hydrohub\\projects\\jawa\\data\\preparing_data\\hydrography\\merit",
+  "output_prefix": "jawa",
+  "crs": "EPSG:4326",
+  "shape": [
+    3758,
+    11641
+  ],
+  "valid_cells": 14616941,
+  "pits_or_outlets": 67013,
+  "d8_codes": {
+    "0": 66714,
+    "1": 1171375,
+    "2": 2711329,
+    "4": 1161011,
+    "8": 2613349,
+    "16": 1063266,
+    "32": 2603337,
+    "64": 1427457,
+    "128": 2856264
+  },
+  "river_threshold_km2": 50.0,
+  "subcatchment_min_area_km2": 250.0,
+  "river_cells": 158042,
+  "river_segments": 1639,
+  "outputs": [
+    "D:\\hydrohub\\projects\\jawa\\data\\preparing_data\\hydrography\\merit\\dem_jawa.tif",
+    "D:\\hydrohub\\projects\\jawa\\data\\preparing_data\\hydrography\\merit\\d8_jawa.tif",
+    "D:\\hydrohub\\projects\\jawa\\data\\preparing_data\\hydrography\\merit\\ldd_jawa.tif",
+    "D:\\hydrohub\\projects\\jawa\\data\\preparing_data\\hydrography\\merit\\flowacc_jawa_cells.tif",
+    "D:\\hydrohub\\projects\\jawa\\data\\preparing_data\\hydrography\\merit\\uparea_jawa_merit_km2.tif",
+    "D:\\hydrohub\\projects\\jawa\\data\\preparing_data\\hydrography\\merit\\uparea_jawa_pyflwdir_km2.tif",
+    "D:\\hydrohub\\projects\\jawa\\data\\preparing_data\\hydrography\\merit\\river_jawa.tif",
+    "D:\\hydrohub\\projects\\jawa\\data\\preparing_data\\hydrography\\merit\\streamorder_jawa.tif",
+    "D:\\hydrohub\\projects\\jawa\\data\\preparing_data\\hydrography\\merit\\basin_jawa.tif",
+    "D:\\hydrohub\\projects\\jawa\\data\\preparing_data\\hydrography\\merit\\subcatchment_jawa.tif",
+    "D:\\hydrohub\\projects\\jawa\\data\\preparing_data\\hydrography\\merit\\subcatchment_outlets_jawa.gpkg",
+    "D:\\hydrohub\\projects\\jawa\\data\\preparing_data\\hydrography\\merit\\river_network_jawa.gpkg"
+  ]
+}

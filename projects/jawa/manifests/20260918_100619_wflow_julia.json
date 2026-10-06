@@ -1,0 +1,40 @@
+{
+  "tool_id": "wflow.julia",
+  "tool_name": "Run Wflow with Julia",
+  "category": "simulation",
+  "module": "Wflow",
+  "tool_version": "1",
+  "command": [
+    "C:\\Users\\Tekni\\AppData\\Local\\Microsoft\\WindowsApps\\julia.EXE",
+    "run_wflow.jl"
+  ],
+  "parameters": [
+    "run_wflow.jl"
+  ],
+  "working_directory": "D:\\hydrohub\\sample",
+  "started_at": "2026-09-18T03:05:32.368904+00:00",
+  "completed_at": "2026-09-18T03:06:19.462368+00:00",
+  "duration_seconds": 47.093,
+  "exit_code": 1,
+  "status": "ERROR",
+  "summary": [
+    "@ D:\\hydrohub\\sample\\run_wflow.jl:22",
+    "[23] include(mod::Module, _path::String)",
+    "@ Base .\\Base.jl:306",
+    "[24] exec_options(opts::Base.JLOptions)",
+    "@ Base .\\client.jl:317",
+    "[25] _start()",
+    "@ Base .\\client.jl:550",
+    "in expression starting at D:\\hydrohub\\sample\\run_wflow.jl:22"
+  ],
+  "outputs": [],
+  "warnings": [],
+  "errors": [
+    "ERROR: LoadError: InexactError: Int64(NaN)"
+  ],
+  "log_file": "D:\\hydrohub\\projects\\jawa\\manifests\\20260918_100532_wflow_julia.log",
+  "environment_profile": {
+    "python": "C:\\Users\\Tekni\\AppData\\Local\\Microsoft\\WindowsApps\\julia.EXE"
+  },
+  "platform": "nt"
+}

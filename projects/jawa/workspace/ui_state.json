@@ -1,0 +1,22 @@
+{
+  "active_catalog_file": "update_wflow.yml",
+  "active_wflow_file": "jawa.yml",
+  "hydromt_output_dir": "C:/Users/Tekni/Downloads/indonesia",
+  "hydromt_mode": "Update",
+  "hydromt_executable": "D:\\hydrohub\\.venv\\Scripts\\hydromt.EXE",
+  "hydromt_catalog_file": "update_wflow.yml",
+  "hydromt_recipe_file": "wflow.yml",
+  "hydromt_model_root": "D:\\hydrohub\\projects\\jawa\\models\\wflow_basin",
+  "hydromt_update_target": "D:/hydrohub/projects/jawa/models/wflow_new",
+  "hydromt_force_overwrite": true,
+  "hydromt_verbose": true,
+  "julia_model_root": "D:\\hydrohub\\projects\\jawa\\models\\wflow_new",
+  "julia_run_history": {
+    "D:\\hydrohub\\projects\\jawa\\models\\wflow_gsmp": 432.67,
+    "D:\\hydrohub\\projects\\jawa\\models\\model_gsm": 9913.601,
+    "D:\\hydrohub\\projects\\jawa\\models\\wflow_pet": 1367.158,
+    "D:\\hydrohub\\projects\\jawa\\models\\wflow_new": 155.19
+  },
+  "results_model_root": "D:\\hydrohub\\projects\\jawa\\models\\model_gsm",
+  "forcing_model_root": "D:\\hydrohub\\projects\\jawa\\models\\wflow_new"
+}

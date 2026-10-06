@@ -1,0 +1,89 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "plugin": ["@dietrichgebert/ponytail"],
+  "provider": {
+    "lmstudio": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "LM Studio",
+      "options": {
+        "baseURL": "http://localhost:1234/v1",
+        "apiKey": "sk-lm-lFePddMh:Yc8LrXUfXmWKHWmJoRQx"
+      },
+      "models": {
+        "qwen/qwen3.5-9b": {
+          "name": "qwen/qwen3.5-9b",
+          "mode": "primary"           
+        }
+      }
+    },
+    "airllm": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "AirLLM",
+      "options": {
+        "baseURL": "http://127.0.0.1:8000/v1",
+        "apiKey": "sk-airllm-dT5UILiZzQxAt7-vt06GS4vpbfYSI-C7yct9iIU1s70"
+      },
+      "models": {
+        "d-models-qwen3-8b": {
+          "name": "d-models-qwen3-8b",
+          "limit": {
+            "context": 2048,
+            "output": 256
+          }
+        }
+      }
+    },
+    "ashnaai": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "AshnaAI",
+      "options": {
+        "baseURL": "https://api.ashna.ai/v1/api",
+        "apiKey": "Ec45QuqpztFQizWqoTcY8"
+      },
+      "models": {
+        "gpt-4o-mini": {
+          "name": "GPT-4o Mini",
+          "mode": "primary"
+        },
+        "gpt-4": {
+          "name": "GPT-4",
+          "mode": "primary"
+        },
+        "claude-fable-5": {
+          "name": "Claude Fable 5",
+          "mode": "primary"
+        },
+        "claude-opus-5": {
+          "name": "Claude Opus 5",
+          "mode": "primary"
+        },
+        "gpt-6-astra": {
+          "name": "GPT-6 Astra",
+          "mode": "primary"
+        },
+        "gpt-5.6-sol": {
+          "name": "GPT-5.6 Sol",
+          "mode": "primary"
+        },
+        "gpt-5.6-luna": {
+          "name": "GPT-5.6 Luna",
+          "mode": "primary"
+        }
+      }
+    }
+      
+  },
+  
+  "mcp": {
+    "graft": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@nanonets/graft",
+        "mcp"
+      ],
+      "enabled": true
+    }
+  }
+}

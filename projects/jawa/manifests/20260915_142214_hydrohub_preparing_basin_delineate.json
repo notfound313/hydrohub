@@ -1,0 +1,54 @@
+{
+  "tool_id": "hydrohub.preparing.basin_delineate",
+  "tool_name": "Delineate Subbasins",
+  "category": "preparing",
+  "module": "hydrohub.tools.basin_delineate",
+  "tool_version": "1.0.0",
+  "command": [
+    "D:\\hydrohub\\.venv\\Scripts\\python.exe",
+    "-u",
+    "-m",
+    "hydrohub.tools.basin_delineate",
+    "--flwdir",
+    "D:\\hydrohub\\projects\\jawa\\data\\preparing_data\\hydrography_rebuilt\\hydrography_rebuilt\\flwdir.tif",
+    "--output-gpkg",
+    "D:\\hydrohub\\projects\\jawa\\data\\preparing_data\\basins\\min250km2_basins.gpkg",
+    "--area-min-km2",
+    "250.0"
+  ],
+  "parameters": [
+    "--flwdir",
+    "D:\\hydrohub\\projects\\jawa\\data\\preparing_data\\hydrography_rebuilt\\hydrography_rebuilt\\flwdir.tif",
+    "--output-gpkg",
+    "D:\\hydrohub\\projects\\jawa\\data\\preparing_data\\basins\\min250km2_basins.gpkg",
+    "--area-min-km2",
+    "250.0"
+  ],
+  "working_directory": "D:\\hydrohub\\projects\\jawa",
+  "started_at": "2026-09-15T07:22:12.762062+00:00",
+  "completed_at": "2026-09-15T07:22:14.112619+00:00",
+  "duration_seconds": 1.351,
+  "exit_code": 1,
+  "status": "ERROR",
+  "summary": [
+    "File \"<frozen runpy>\", line 88, in _run_code",
+    "File \"D:\\hydrohub\\src\\hydrohub\\tools\\basin_delineate.py\", line 80, in <module>",
+    "raise SystemExit(main())",
+    "~~~~^^",
+    "File \"D:\\hydrohub\\src\\hydrohub\\tools\\basin_delineate.py\", line 26, in main",
+    "shapes = require(\"rasterio.features\").shapes",
+    "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+    "AttributeError: module 'rasterio' has no attribute 'shapes'"
+  ],
+  "outputs": [],
+  "warnings": [],
+  "errors": [
+    "Traceback (most recent call last):",
+    "AttributeError: module 'rasterio' has no attribute 'shapes'"
+  ],
+  "log_file": "D:\\hydrohub\\projects\\jawa\\manifests\\20260915_142212_hydrohub_preparing_basin_delineate.log",
+  "environment_profile": {
+    "python": "D:\\hydrohub\\.venv\\Scripts\\python.exe"
+  },
+  "platform": "nt"
+}

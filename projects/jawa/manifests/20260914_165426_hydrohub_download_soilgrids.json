@@ -1,0 +1,39 @@
+{
+  "tool_id": "hydrohub.download.soilgrids",
+  "category": "download",
+  "module": "hydrohub.tools.soilgrids",
+  "tool_version": "1.0.0",
+  "command": [
+    "D:\\hydrohub\\.venv\\Scripts\\python.exe",
+    "-u",
+    "-m",
+    "hydrohub.tools.soilgrids",
+    "--west",
+    "104.5",
+    "--south",
+    "-9.5",
+    "--east",
+    "115.3",
+    "--north",
+    "-5.0",
+    "--output-dir",
+    "D:\\hydrohub\\projects\\jawa\\data\\raw\\soilgrids_2020",
+    "--width",
+    "400",
+    "--height",
+    "370",
+    "--properties",
+    "bd,clyppt,oc,ph,sltppt,sndppt",
+    "--no-dry-run"
+  ],
+  "working_directory": "D:\\hydrohub\\projects\\jawa",
+  "started_at": "2026-09-14T09:54:25.994785+00:00",
+  "completed_at": "2026-09-14T09:54:26.108415+00:00",
+  "exit_code": 1,
+  "status": "ERROR",
+  "log_file": "D:\\hydrohub\\projects\\jawa\\manifests\\20260914_165425_hydrohub_download_soilgrids.log",
+  "environment_profile": {
+    "python": "D:\\hydrohub\\.venv\\Scripts\\python.exe"
+  },
+  "platform": "nt"
+}

@@ -1,0 +1,73 @@
+{
+  "tool_id": "hydrohub.download.era5_land_pet",
+  "tool_name": "ERA5-Land raw PET",
+  "category": "download",
+  "module": "hydrohub.tools.era5_land_pet",
+  "tool_version": "1.0.0",
+  "command": [
+    "D:\\hydrohub\\.venv\\Scripts\\python.exe",
+    "-u",
+    "-m",
+    "hydrohub.tools.era5_land_pet",
+    "--start-date",
+    "2026-01-01",
+    "--end-date",
+    "2026-12-31",
+    "--west",
+    "104.5",
+    "--south",
+    "-9.5",
+    "--east",
+    "115.3",
+    "--north",
+    "-5.0",
+    "--output-dir",
+    "D:\\hydrohub\\projects\\jawa\\data\\raw\\era5land_pet"
+  ],
+  "parameters": [
+    "--start-date",
+    "2026-01-01",
+    "--end-date",
+    "2026-12-31",
+    "--west",
+    "104.5",
+    "--south",
+    "-9.5",
+    "--east",
+    "115.3",
+    "--north",
+    "-5.0",
+    "--output-dir",
+    "D:\\hydrohub\\projects\\jawa\\data\\raw\\era5land_pet"
+  ],
+  "working_directory": "D:\\hydrohub\\projects\\jawa",
+  "started_at": "2026-09-15T07:33:07.567999+00:00",
+  "completed_at": "2026-09-15T07:33:07.696833+00:00",
+  "duration_seconds": 0.129,
+  "exit_code": 1,
+  "status": "ERROR",
+  "summary": [
+    "~~~~^^",
+    "File \"D:\\hydrohub\\src\\hydrohub\\tools\\era5_land_pet.py\", line 46, in main",
+    "cdsapi = require(\"cdsapi\")",
+    "File \"D:\\hydrohub\\src\\hydrohub\\tools\\common.py\", line 38, in require",
+    "raise RuntimeError(",
+    "...<2 lines>...",
+    ") from exc",
+    "RuntimeError: Missing dependency 'cdsapi'. Install it in the selected interpreter with: python -m pip install cdsapi"
+  ],
+  "outputs": [],
+  "warnings": [],
+  "errors": [
+    "Traceback (most recent call last):",
+    "ModuleNotFoundError: No module named 'cdsapi'",
+    "Traceback (most recent call last):",
+    "raise RuntimeError(",
+    "RuntimeError: Missing dependency 'cdsapi'. Install it in the selected interpreter with: python -m pip install cdsapi"
+  ],
+  "log_file": "D:\\hydrohub\\projects\\jawa\\manifests\\20260915_143307_hydrohub_download_era5_land_pet.log",
+  "environment_profile": {
+    "python": "D:\\hydrohub\\.venv\\Scripts\\python.exe"
+  },
+  "platform": "nt"
+}

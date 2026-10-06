@@ -1,0 +1,12 @@
+{
+  "segments": 1639,
+  "gqbf_java_reaches": 3602,
+  "A": 260.9183937991066,
+  "B": 0.10734692498567538,
+  "log_R2": 0.09070037572050427,
+  "direct_percent": 17.632702867602195,
+  "powerlaw_fill_percent": 82.3672971323978,
+  "missing_percent": 0.0,
+  "depth_formula": "max(1.0,0.27*qbankfull^0.3)",
+  "output": "D:\\wflow\\jawa_merit\\RIVER_GEOM_QBF\\river_geom_jawa_qbankfull.gpkg"
+}

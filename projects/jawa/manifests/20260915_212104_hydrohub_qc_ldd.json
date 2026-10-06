@@ -1,0 +1,72 @@
+{
+  "tool_id": "hydrohub.qc.ldd",
+  "tool_name": "Flow Network QC",
+  "category": "qc",
+  "module": "hydrohub.tools.qc_ldd",
+  "tool_version": "1.0.0",
+  "command": [
+    "D:\\hydrohub\\.venv\\Scripts\\python.exe",
+    "-u",
+    "-m",
+    "hydrohub.tools.qc_ldd",
+    "--dem",
+    "D:\\hydrohub\\projects\\jawa\\data\\preparing_data\\hydrography\\merit\\dem_jawa.tif",
+    "--flwdir",
+    "D:\\hydrohub\\projects\\jawa\\data\\preparing_data\\hydrography\\merit\\d8_jawa.tif",
+    "--uparea",
+    "D:\\hydrohub\\projects\\jawa\\data\\raw\\hydrography\\uparea_jawa_merit_km2.tif",
+    "--output-dir",
+    "D:\\hydrohub\\projects\\jawa\\data\\preparing_data\\hydrography\\merit",
+    "--auto-repair",
+    "--river-threshold-km2",
+    "50.0",
+    "--subcatchment-min-area-km2",
+    "250.0"
+  ],
+  "parameters": [
+    "--dem",
+    "D:\\hydrohub\\projects\\jawa\\data\\preparing_data\\hydrography\\merit\\dem_jawa.tif",
+    "--flwdir",
+    "D:\\hydrohub\\projects\\jawa\\data\\preparing_data\\hydrography\\merit\\d8_jawa.tif",
+    "--uparea",
+    "D:\\hydrohub\\projects\\jawa\\data\\raw\\hydrography\\uparea_jawa_merit_km2.tif",
+    "--output-dir",
+    "D:\\hydrohub\\projects\\jawa\\data\\preparing_data\\hydrography\\merit",
+    "--auto-repair",
+    "--river-threshold-km2",
+    "50.0",
+    "--subcatchment-min-area-km2",
+    "250.0"
+  ],
+  "working_directory": "D:\\hydrohub\\projects\\jawa",
+  "started_at": "2026-09-15T14:21:02.460573+00:00",
+  "completed_at": "2026-09-15T14:21:04.080985+00:00",
+  "duration_seconds": 1.62,
+  "exit_code": 1,
+  "status": "ERROR",
+  "summary": [
+    "with rasterio.open(path) as src:",
+    "~~~~~~~~~~~~~^^^^^^",
+    "File \"D:\\hydrohub\\.venv\\Lib\\site-packages\\rasterio\\env.py\", line 463, in wrapper",
+    "return f(*args, **kwds)",
+    "File \"D:\\hydrohub\\.venv\\Lib\\site-packages\\rasterio\\__init__.py\", line 368, in open",
+    "dataset = DatasetReader(path, driver=driver, sharing=sharing, **kwargs)",
+    "File \"rasterio/_base.pyx\", line 313, in rasterio._base.DatasetBase.__init__",
+    "rasterio.errors.RasterioIOError: D:\\hydrohub\\projects\\jawa\\data\\raw\\hydrography\\uparea_jawa_merit_km2.tif: No such file or directory"
+  ],
+  "outputs": [],
+  "warnings": [
+    "D:\\hydrohub\\src\\hydrohub\\tools\\qc_ldd.py:30: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5."
+  ],
+  "errors": [
+    "Traceback (most recent call last):",
+    "rasterio._err.CPLE_OpenFailedError: D:\\hydrohub\\projects\\jawa\\data\\raw\\hydrography\\uparea_jawa_merit_km2.tif: No such file or directory",
+    "Traceback (most recent call last):",
+    "rasterio.errors.RasterioIOError: D:\\hydrohub\\projects\\jawa\\data\\raw\\hydrography\\uparea_jawa_merit_km2.tif: No such file or directory"
+  ],
+  "log_file": "D:\\hydrohub\\projects\\jawa\\manifests\\20260915_212102_hydrohub_qc_ldd.log",
+  "environment_profile": {
+    "python": "D:\\hydrohub\\.venv\\Scripts\\python.exe"
+  },
+  "platform": "nt"
+}

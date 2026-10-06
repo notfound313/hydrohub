@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="leaflet.css">
+  <style>
+    html, body, #map { width: 100%; height: 100%; margin: 0; background: #0a1016; }
+    .leaflet-container { background: #0a1016; font: 12px Inter, "Segoe UI", sans-serif; }
+    .neutral-basemap { filter: grayscale(1) saturate(.35); }
+    .leaflet-control-layers, .leaflet-bar a, .leaflet-control-scale-line {
+      color: #dfe2eb; background: #161b21; border-color: #3e484f;
+    }
+    .leaflet-bar a:hover { color: #10141a; background: #8ed5ff; }
+    .leaflet-control-attribution { color: #87929a; background: rgba(10,14,20,.88) !important; }
+    .leaflet-control-attribution a { color: #8ed5ff; }
+    .leaflet-popup-content-wrapper, .leaflet-popup-tip { color: #dfe2eb; background: #1c2026; }
+    .fallback-grid {
+      background-color: #0a1016;
+      background-image: linear-gradient(#17222c 1px, transparent 1px), linear-gradient(90deg, #17222c 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    .map-label { color: #8ed5ff; font-family: "JetBrains Mono", monospace; text-shadow: 0 1px 2px #000; }
+  </style>
+</head>
+<body>
+  <div id="map" class="fallback-grid" aria-label="Interactive map of Indonesia"></div>
+  <script src="leaflet.js"></script>
+  <script>
+    const map = L.map('map', {zoomControl: true, preferCanvas: true, zoomSnap: 0.25, zoomDelta: 0.5, maxZoom: 17}).setView([-2.4, 118.0], 5);
+    const neutral = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      className: 'neutral-basemap',
+      attribution: '&copy; OpenStreetMap contributors'
+    });
+    const street = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; OpenStreetMap contributors'
+    });
+    const terrain = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+      maxZoom: 17,
+      attribution: 'Map data &copy; OpenStreetMap contributors, SRTM | Map style &copy; OpenTopoMap'
+    });
+    street.addTo(map);
+    const basinLayer = L.geoJSON(null, {
+      style: {color: '#0066ff', weight: 3, dashArray: '6 4', fillColor: '#8ed5ff', fillOpacity: 0.06},
+      onEachFeature: (feature, layer) => layer.bindPopup(feature.properties?.name || 'Project AOI')
+    }).addTo(map);
+    const dataLayer = L.layerGroup().addTo(map);
+    const namedLayers = {};
+    let focusMarker = null;
+    const layerControl = L.control.layers({'OpenStreetMap': street,'Peta Netral': neutral, 'Terrain': terrain}, {'Project AOI': basinLayer}, {collapsed: false}).addTo(map);
+    const geometryStyles = [
+      {match: /river/, color: '#168aad', fill: '#48cae4', weight: 2.4, opacity: 0.95, fillOpacity: 0.16},
+      {match: /outlet|station|gauge/, color: '#dc2626', fill: '#fb7185', weight: 2, opacity: 1, fillOpacity: 0.82},
+      {match: /basin/, color: '#d97706', fill: '#fbbf24', weight: 2, opacity: 0.95, fillOpacity: 0.12},
+      {match: /region|boundary|admin/, color: '#7c3aed', fill: '#a78bfa', weight: 2, opacity: 0.9, fillOpacity: 0.08},
+      {match: /catchment|watershed/, color: '#15803d', fill: '#4ade80', weight: 2, opacity: 0.95, fillOpacity: 0.14}
+    ];
+    const geometryStyle = (name, feature, choropleth) => {
+      const style = geometryStyles.find((item) => item.match.test(name)) ||
+        {color: '#0f766e', fill: '#2dd4bf', weight: 1.8, opacity: 0.95, fillOpacity: 0.1};
+      const properties = feature?.properties || {};
+      return choropleth
+        ? {color: '#64748b', weight: 1.5, fillColor: properties.__fill_color || '#cbd5e1', fillOpacity: 0.72}
+        : {color: style.color, weight: style.weight, opacity: style.opacity,
+            fillColor: properties.__fill_color || style.fill,
+            fillOpacity: properties.__fill_color ? 0.72 : style.fillOpacity};
+    };
+    L.control.scale({imperial: false}).addTo(map);
+    if (window.ResizeObserver) {
+      new ResizeObserver(() => map.invalidateSize()).observe(document.getElementById('map'));
+    }
+
+    window.hydrohubMap = {
+      fitIndonesia: () => map.fitBounds([[-11.2, 94.5], [6.2, 141.2]]),
+      fitAoi: () => {
+        map.invalidateSize();
+        if (basinLayer.getLayers().length) {
+          map.fitBounds(basinLayer.getBounds(), {padding: [24, 24], maxZoom: 12});
+        }
+      },
+      setAOI: (geojson, fit = true) => {
+        basinLayer.clearLayers();
+        basinLayer.addData(geojson);
+        if (fit) window.hydrohubMap.fitAoi();
+      },
+      addGeoJSON: (name, geojson, choropleth = false, fit = false) => {
+        window.hydrohubMap.removeLayer(name);
+        const layer = L.geoJSON(geojson, {
+          style: (feature) => geometryStyle(name, feature, choropleth),
+          pointToLayer: (feature, latlng) => {
+            const style = geometryStyle(name, feature, choropleth);
+            return L.circleMarker(latlng, {radius: 5, color: style.color, weight: 2,
+              fillColor: style.fillColor, fillOpacity: style.fillOpacity});
+          },
+          onEachFeature: (feature, featureLayer) => {
+            const p = feature.properties || {};
+            if (p.__popup_html) {
+              featureLayer.bindPopup(p.__popup_html);
+              if (p.station_id) featureLayer.bindTooltip(`Outlet / Stasiun ${p.station_id}`);
+              return;
+            }
+            const details = Object.entries(p)
+              .filter(([key]) => !key.startsWith('__'))
+              .slice(0, 12)
+              .map(([key, value]) => `<b>${key}</b>: ${value}`)
+              .join('<br>');
+            const ssfi = p.__ssfi_label ? `<b>SSFI</b>: ${p.__ssfi_value ?? 'N/A'} (${p.__ssfi_label})<br>` : '';
+            featureLayer.bindPopup(`<b>${name}</b><br>${ssfi}${details}`);
+          }
+        });
+        dataLayer.addLayer(layer);
+        namedLayers[name] = layer;
+        layerControl.addOverlay(layer, name);
+        if (fit && layer.getLayers().length) {
+          map.invalidateSize();
+          map.fitBounds(layer.getBounds(), {padding: [20, 20], maxZoom: 12});
+        }
+        return true;
+      },
+      setRaster: (name, imageUrl, bounds) => {
+        const existing = namedLayers[name];
+        if (existing instanceof L.ImageOverlay) {
+          existing.setBounds(bounds);
+          existing.setUrl(imageUrl);
+          return true;
+        }
+        window.hydrohubMap.removeLayer(name);
+        const layer = L.imageOverlay(imageUrl, bounds, {opacity: 0.78, interactive: true});
+        dataLayer.addLayer(layer);
+        namedLayers[name] = layer;
+        layerControl.addOverlay(layer, name);
+        return true;
+      },
+      removeLayer: (name) => {
+        const layer = namedLayers[name];
+        if (!layer) return false;
+        dataLayer.removeLayer(layer);
+        layerControl.removeLayer(layer);
+        delete namedLayers[name];
+        return true;
+      },
+      fitBounds: (bounds) => {
+        map.invalidateSize();
+        map.fitBounds(bounds, {padding: [20, 20], maxZoom: 12});
+      },
+      focusMarker: (latitude, longitude, popupHtml, tooltip) => {
+        if (focusMarker) map.removeLayer(focusMarker);
+        focusMarker = L.circleMarker([latitude, longitude], {
+          radius: 8, color: '#f8fafc', weight: 2, fillColor: '#ef4444', fillOpacity: 0.95
+        }).addTo(map).bindPopup(popupHtml).bindTooltip(tooltip);
+        focusMarker.openPopup();
+        return true;
+      },
+      clearData: () => {
+        Object.keys(namedLayers).forEach((name) => window.hydrohubMap.removeLayer(name));
+        dataLayer.clearLayers();
+        if (focusMarker) { map.removeLayer(focusMarker); focusMarker = null; }
+      }
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+meta:
+  version: v1.0.0
+  name: update_wflow
+
+gsmp:
+  data_type: RasterDataset
+  uri: D:\hydrohub\HydroHub_Global_Database\climate\gsmap_daily_jawa_hydromt.nc
+  driver:
+    name: raster_xarray
+    options:
+      chunks: null       
+      decode_times: true
+  metadata:
+    crs: '4326'
+    category: forcing
+
+era_5:
+  data_type: RasterDataset
+  uri: preparing_data/era5/era5land_pet_jawa_daily.nc
+  driver:
+    name: raster_xarray
+    options:
+      chunks: null       
+      decode_times: true   
+  metadata:
+    crs: '4326'
+    category: forcing

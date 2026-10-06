@@ -1,0 +1,20 @@
+{
+  "tool_id": "sample.download.01_download_gsmap_daily_direct_jawa",
+  "category": "download",
+  "script": "D:\\hydrohub\\sample\\download\\01_download_gsmap_daily_direct_jawa.py",
+  "command": [
+    "D:\\hydrohub\\.venv\\Scripts\\python.exe",
+    "-u",
+    "D:\\hydrohub\\sample\\download\\01_download_gsmap_daily_direct_jawa.py"
+  ],
+  "working_directory": "D:\\hydrohub\\projects\\jawa",
+  "started_at": "2026-09-14T08:50:32.085412+00:00",
+  "completed_at": "2026-09-14T08:50:32.212614+00:00",
+  "exit_code": 1,
+  "status": "ERROR",
+  "log_file": "D:\\hydrohub\\projects\\jawa\\manifests\\20260914_155032_01_download_gsmap_daily_direct_jawa.log",
+  "environment_profile": {
+    "python": "D:\\hydrohub\\.venv\\Scripts\\python.exe"
+  },
+  "platform": "nt"
+}

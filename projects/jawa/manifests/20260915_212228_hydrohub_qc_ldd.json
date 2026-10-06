@@ -1,0 +1,70 @@
+{
+  "tool_id": "hydrohub.qc.ldd",
+  "tool_name": "Flow Network QC",
+  "category": "qc",
+  "module": "hydrohub.tools.qc_ldd",
+  "tool_version": "1.0.0",
+  "command": [
+    "D:\\hydrohub\\.venv\\Scripts\\python.exe",
+    "-u",
+    "-m",
+    "hydrohub.tools.qc_ldd",
+    "--dem",
+    "D:\\hydrohub\\projects\\jawa\\data\\preparing_data\\hydrography\\merit\\dem_jawa.tif",
+    "--flwdir",
+    "D:\\hydrohub\\projects\\jawa\\data\\preparing_data\\hydrography\\merit\\d8_jawa.tif",
+    "--uparea",
+    "D:\\hydrohub\\projects\\jawa\\data\\preparing_data\\hydrography\\merit\\uparea_jawa_merit_km2.tif",
+    "--output-dir",
+    "D:\\hydrohub\\projects\\jawa\\data\\preparing_data\\hydrography",
+    "--auto-repair",
+    "--river-threshold-km2",
+    "50.0",
+    "--subcatchment-min-area-km2",
+    "250.0"
+  ],
+  "parameters": [
+    "--dem",
+    "D:\\hydrohub\\projects\\jawa\\data\\preparing_data\\hydrography\\merit\\dem_jawa.tif",
+    "--flwdir",
+    "D:\\hydrohub\\projects\\jawa\\data\\preparing_data\\hydrography\\merit\\d8_jawa.tif",
+    "--uparea",
+    "D:\\hydrohub\\projects\\jawa\\data\\preparing_data\\hydrography\\merit\\uparea_jawa_merit_km2.tif",
+    "--output-dir",
+    "D:\\hydrohub\\projects\\jawa\\data\\preparing_data\\hydrography",
+    "--auto-repair",
+    "--river-threshold-km2",
+    "50.0",
+    "--subcatchment-min-area-km2",
+    "250.0"
+  ],
+  "working_directory": "D:\\hydrohub\\projects\\jawa",
+  "started_at": "2026-09-15T14:22:26.478700+00:00",
+  "completed_at": "2026-09-15T14:22:28.311167+00:00",
+  "duration_seconds": 1.832,
+  "exit_code": 1,
+  "status": "ERROR",
+  "summary": [
+    "File \"<frozen runpy>\", line 88, in _run_code",
+    "File \"D:\\hydrohub\\src\\hydrohub\\tools\\qc_ldd.py\", line 200, in <module>",
+    "raise SystemExit(main())",
+    "~~~~^^",
+    "File \"D:\\hydrohub\\src\\hydrohub\\tools\\qc_ldd.py\", line 56, in main",
+    "if not (_same_transform(dem_transform, d8_transform, np) and _same_transform(dem_transform, upa_profile.transform, np)):",
+    "^^^^^^^^^^^^^^^^^^^^^",
+    "AttributeError: 'Profile' object has no attribute 'transform'"
+  ],
+  "outputs": [],
+  "warnings": [
+    "D:\\hydrohub\\src\\hydrohub\\tools\\qc_ldd.py:30: DeprecationWarning: Setting the shape on a NumPy array has been deprecated in NumPy 2.5."
+  ],
+  "errors": [
+    "Traceback (most recent call last):",
+    "AttributeError: 'Profile' object has no attribute 'transform'"
+  ],
+  "log_file": "D:\\hydrohub\\projects\\jawa\\manifests\\20260915_212226_hydrohub_qc_ldd.log",
+  "environment_profile": {
+    "python": "D:\\hydrohub\\.venv\\Scripts\\python.exe"
+  },
+  "platform": "nt"
+}

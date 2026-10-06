@@ -1,0 +1,38 @@
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*.log
+.pytest_cache/
+dist/
+build/
+*.egg-info/
+
+# graft's local graph cache — regenerable, not committed (run `graft build`).
+graft/
+
+# Environment & secrets
+.env
+.env.*
+!.env.example
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS filesgit
+.DS_Store
+Thumbs.db
+
+# Project-specific
+.hydrohub/
+.serena/
+sample
+HydroHub_Global_Database/*
+projects/*
+
+
+

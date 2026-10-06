@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "model_id": "03cf5a0d2149",
+  "runs": [
+    {
+      "run_id": "run_20010101_20011231_v2",
+      "model_id": "03cf5a0d2149",
+      "project_id": "20e9da121843",
+      "start_date": "2001-01-01T00:00:00",
+      "end_date": "2020-12-31T00:00:00",
+      "output_path": "runs/run_20010101_20011231_v2",
+      "state_output_path": "runs/run_20010101_20011231_v2/outstate.nc",
+      "state_input_path": null,
+      "config_hash": "afbc22393111e9975cd5cd985b069451aa253c5027ff919bde5b6c6a91170881",
+      "forcing_source": {
+        "path": "D:\\hydrohub\\projects\\jawa\\models\\model_gsm\\inmaps_gpm_imerg_jawa_None_2001_2020.nc",
+        "fingerprint": "fed61f67410e8a6ca8ef90139971e559a7b85e3d0b9b928cf47fd3fdc5f7eac3",
+        "size": 500212684
+      },
+      "status": "failed",
+      "created_at": "2026-09-17T09:08:37.744010+00:00"
+    }
+  ]
+}

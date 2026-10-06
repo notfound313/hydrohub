@@ -1,0 +1,62 @@
+{
+  "tool_id": "hydromt.cli",
+  "tool_name": "HydroMT Build",
+  "category": "model",
+  "module": "hydromt",
+  "tool_version": "1",
+  "command": [
+    "D:\\hydrohub\\.venv\\Scripts\\hydromt.EXE",
+    "build",
+    "wflow_sbm",
+    "D:\\hydrohub\\projects\\jawa\\models\\wflow",
+    "-i",
+    "D:\\hydrohub\\projects\\jawa\\configs\\hydromt\\jawa.yml",
+    "-d",
+    "D:\\hydrohub\\projects\\jawa\\data\\catalog\\wflow_catalog.yml",
+    "--fo",
+    "-v"
+  ],
+  "parameters": [
+    "build",
+    "wflow_sbm",
+    "D:\\hydrohub\\projects\\jawa\\models\\wflow",
+    "-i",
+    "D:\\hydrohub\\projects\\jawa\\configs\\hydromt\\jawa.yml",
+    "-d",
+    "D:\\hydrohub\\projects\\jawa\\data\\catalog\\wflow_catalog.yml",
+    "--fo",
+    "-v"
+  ],
+  "working_directory": "D:\\hydrohub\\projects\\jawa",
+  "started_at": "2026-09-15T14:23:49.471640+00:00",
+  "completed_at": "2026-09-15T14:23:51.863596+00:00",
+  "duration_seconds": 2.392,
+  "exit_code": 1,
+  "status": "ERROR",
+  "summary": [
+    "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+    "strategy=handle_nodata,",
+    "^^^^^^^^^^^^^^^^^^^^^^^",
+    ")",
+    "^",
+    "File \"D:\\hydrohub\\.venv\\Lib\\site-packages\\hydromt\\error.py\", line 55, in exec_nodata_strat",
+    "raise NoDataException(msg)",
+    "hydromt.error.NoDataException: Resolver 'convention' found no files at D:/hydrohub/projects/jawa/jawa/data/data/preparing_data/hydrography_rebuilt/hydrography_rebuilt/{variabel}.tif."
+  ],
+  "outputs": [],
+  "warnings": [],
+  "errors": [
+    "2026-09-15 21:23:51,536 - hydromt - log - ERROR - Unhandled exception occured.",
+    "Traceback (most recent call last):",
+    "File \"D:\\hydrohub\\.venv\\Lib\\site-packages\\hydromt\\error.py\", line 55, in exec_nodata_strat",
+    "hydromt.error.NoDataException: Resolver 'convention' found no files at D:/hydrohub/projects/jawa/jawa/data/data/preparing_data/hydrography_rebuilt/hydrography_rebuilt/{variabel}.tif.",
+    "Traceback (most recent call last):",
+    "File \"D:\\hydrohub\\.venv\\Lib\\site-packages\\hydromt\\error.py\", line 55, in exec_nodata_strat",
+    "hydromt.error.NoDataException: Resolver 'convention' found no files at D:/hydrohub/projects/jawa/jawa/data/data/preparing_data/hydrography_rebuilt/hydrography_rebuilt/{variabel}.tif."
+  ],
+  "log_file": "D:\\hydrohub\\projects\\jawa\\manifests\\20260915_212349_hydromt_cli.log",
+  "environment_profile": {
+    "python": "D:\\hydrohub\\.venv\\Scripts\\hydromt.EXE"
+  },
+  "platform": "nt"
+}

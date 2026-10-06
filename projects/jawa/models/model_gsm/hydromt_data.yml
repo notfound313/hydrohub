@@ -1,0 +1,34 @@
+meta:
+  root: None
+
+era5land_pet_jawa:
+  uri: jawa/forcing_source/era5land_pet_jawa_daily.nc
+  driver:
+    options:
+      chunks:
+        time: 168
+      decode_times: true
+    name: raster_xarray
+  metadata:
+    crs: 4326
+    category: meteo
+    notes: ERA5-Land potential evaporation converted to positive pet [mm]. Dims renamed
+      x/y, expver resolved.
+  data_type: RasterDataset
+  root: None
+
+gpm_imerg_jawa:
+  uri: jawa/forcing_source/gsmap_daily_jawa_hydromt.nc
+  driver:
+    options:
+      chunks:
+        time: 336
+      decode_times: true
+    name: raster_xarray
+  metadata:
+    crs: 4326
+    category: meteo
+    source_url: https://gpm.nasa.gov/data/imerg
+    notes: NASA GPM IMERG normalized to precip [mm per source timestep] for HydroMT-Wflow.
+  data_type: RasterDataset
+  root: None

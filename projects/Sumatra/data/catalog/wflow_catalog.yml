@@ -1,0 +1,60 @@
+meta:
+  version: v1.0.0
+  name: sumatra
+
+merit_sumatra:
+  data_type: RasterDataset
+  uri: preparing_data/manifest_data/02_hydromt_rebuilt/hydrography_rebuilt/{variable}.tif
+  driver:
+    name: rasterio
+  metadata:
+    crs: '4326'
+    category: dem
+
+outlet_sumatra:
+  data_type: GeoDataFrame
+  uri: preparing_data/Subbasin/subbasins.gpkg
+  driver:
+    name: pyogrio
+    options:
+      layer: outlets
+  metadata:
+    crs: '4326'
+    category: river_geometry
+
+lai_sumatra:
+  data_type: RasterDataset
+  uri: preparing_data/lai.nc
+  driver:
+    name: raster_xarray
+  metadata:
+    crs: '4326'
+    category: meteo
+
+soilgrids_2020:
+  data_type: RasterDataset
+  uri: D:\hydrohub\HydroHub_Global_Database\soil\soilgrids_2020\{variable}.tif
+  driver:
+    name: rasterio
+  metadata:
+    notes: ini bapak budi
+    crs: '4326'
+    category: soil
+
+landuse_sumatra:
+  data_type: RasterDataset
+  uri: D:\hydrohub\HydroHub_Global_Database\landcover\esa_worldcover_2021_Indonesia.tif
+  driver:
+    name: rasterio
+  metadata:
+    crs: '4326'
+    category: landuse
+
+river_geom:
+  data_type: GeoDataFrame
+  uri: preparing_data/river_geom/gqbf_points.gpkg
+  driver:
+    name: pyogrio
+  metadata:
+    crs: '4326'
+    category: river_geometry

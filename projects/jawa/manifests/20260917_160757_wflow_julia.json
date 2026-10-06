@@ -1,0 +1,42 @@
+{
+  "tool_id": "wflow.julia",
+  "tool_name": "Run Wflow with Julia",
+  "category": "simulation",
+  "module": "Wflow",
+  "tool_version": "1",
+  "command": [
+    "C:\\Users\\Tekni\\AppData\\Local\\Microsoft\\WindowsApps\\julia.EXE",
+    "run_wflow.jl"
+  ],
+  "parameters": [
+    "run_wflow.jl"
+  ],
+  "working_directory": "D:\\hydrohub\\sample",
+  "started_at": "2026-09-17T09:07:27.717713+00:00",
+  "completed_at": "2026-09-17T09:07:57.518551+00:00",
+  "duration_seconds": 29.801,
+  "exit_code": 1,
+  "status": "ERROR",
+  "summary": [
+    "@ D:\\hydrohub\\sample\\run_wflow.jl:22",
+    "[19] include(mod::Module, _path::String)",
+    "@ Base .\\Base.jl:306",
+    "[20] exec_options(opts::Base.JLOptions)",
+    "@ Base .\\client.jl:317",
+    "[21] _start()",
+    "@ Base .\\client.jl:550",
+    "in expression starting at D:\\hydrohub\\sample\\run_wflow.jl:22"
+  ],
+  "outputs": [],
+  "warnings": [],
+  "errors": [
+    "ERROR: LoadError: Required input model parameter with standard name 'subsurface_water__horizontal_to_vertical_saturated_hydraulic_conductivity_ratio' not set in TOML file",
+    "[1] error(s::String)",
+    "@ Base .\\error.jl:44"
+  ],
+  "log_file": "D:\\hydrohub\\projects\\jawa\\manifests\\20260917_160727_wflow_julia.log",
+  "environment_profile": {
+    "python": "C:\\Users\\Tekni\\AppData\\Local\\Microsoft\\WindowsApps\\julia.EXE"
+  },
+  "platform": "nt"
+}

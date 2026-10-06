@@ -1,0 +1,42 @@
+{
+  "tool_id": "wflow.julia",
+  "tool_name": "Run Wflow with Julia",
+  "category": "simulation",
+  "module": "Wflow",
+  "tool_version": "1",
+  "command": [
+    "C:\\Users\\Tekni\\AppData\\Local\\Microsoft\\WindowsApps\\julia.EXE",
+    "run_wflow.jl"
+  ],
+  "parameters": [
+    "run_wflow.jl"
+  ],
+  "working_directory": "D:\\hydrohub\\sample",
+  "started_at": "2026-09-16T05:08:39.497847+00:00",
+  "completed_at": "2026-09-16T05:09:16.609349+00:00",
+  "duration_seconds": 37.112,
+  "exit_code": 62097,
+  "status": "ERROR",
+  "summary": [
+    "[ Info: Set outlets using netCDF variable outlets.",
+    "\u250c Info: Adding scalar output for a map with a reducer function.",
+    "\u2502   fileformat = \"CSV\"",
+    "\u2502   param = \"river_water__volume_flow_rate\"",
+    "\u2502   mapname = \"outlets\"",
+    "\u2514   reducer_name = \"only\"",
+    "[ Info: Set initial conditions from default values.",
+    "[ Info: Initialized model"
+  ],
+  "outputs": [],
+  "warnings": [
+    "\u250c Warning: State variable snowpack_liquid_water__depth provided, but is not",
+    "\u250c Warning: State variable soil_surface__temperature provided, but is not used",
+    "\u250c Warning: State variable snowpack_dry_snow__leq_depth provided, but is not"
+  ],
+  "errors": [],
+  "log_file": "D:\\hydrohub\\projects\\jawa\\manifests\\20260916_120839_wflow_julia.log",
+  "environment_profile": {
+    "python": "C:\\Users\\Tekni\\AppData\\Local\\Microsoft\\WindowsApps\\julia.EXE"
+  },
+  "platform": "nt"
+}

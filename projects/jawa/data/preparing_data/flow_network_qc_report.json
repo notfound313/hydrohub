@@ -1,0 +1,24 @@
+{
+  "output_dir": "D:\\hydrohub\\projects\\jawa\\data\\preparing_data",
+  "crs": "EPSG:4326",
+  "shape": [
+    3758,
+    11641
+  ],
+  "valid_cells": 15674102,
+  "flow_valid_before": false,
+  "flow_valid_after": true,
+  "repair_performed": true,
+  "d8_cells_changed": 1057161,
+  "pits_before": 67013,
+  "pits_after": 1124174,
+  "river_threshold_km2": 50.0,
+  "subcatchment_min_area_km2": 250.0,
+  "n_subcatchments": 1124362,
+  "upa_comparison": {
+    "mae_km2": 1.3670884285643568,
+    "rmse_km2": 60.195187351138486,
+    "max_abs_difference_km2": 3564.4268559286024
+  },
+  "hydromt_ready": true
+}

@@ -1,0 +1,33 @@
+{
+  "tool_id": "hydrohub.preparing.merit_hydro_preprocessing",
+  "category": "preparing",
+  "module": "hydrohub.tools.merit_hydro_preprocessing",
+  "tool_version": "1.0.0",
+  "command": [
+    "D:\\hydrohub\\.venv\\Scripts\\python.exe",
+    "-u",
+    "-m",
+    "hydrohub.tools.merit_hydro_preprocessing",
+    "--input-file",
+    "D:\\hydrohub\\projects\\jawa\\data\\raw\\hydrography\\MERIT_Hydro_Jawa.tif",
+    "--output-dir",
+    "D:\\hydrohub\\projects\\jawa\\data\\preparing_data\\hydrography\\merit",
+    "--output-prefix",
+    "jawa",
+    "--river-threshold-km2",
+    "50.0",
+    "--subcatchment-min-area-km2",
+    "250.0",
+    "--export-river-vector"
+  ],
+  "working_directory": "D:\\hydrohub\\projects\\jawa",
+  "started_at": "2026-09-15T04:08:21.696410+00:00",
+  "completed_at": "2026-09-15T04:08:29.122431+00:00",
+  "exit_code": 1,
+  "status": "ERROR",
+  "log_file": "D:\\hydrohub\\projects\\jawa\\manifests\\20260915_110821_hydrohub_preparing_merit_hydro_preprocessing.log",
+  "environment_profile": {
+    "python": "D:\\hydrohub\\.venv\\Scripts\\python.exe"
+  },
+  "platform": "nt"
+}
